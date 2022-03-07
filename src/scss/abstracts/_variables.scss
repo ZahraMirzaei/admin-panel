@@ -41,6 +41,19 @@
   /* ****icon size**** */
   $smallIconSize: 24px;
   $largeIconSize: 48px;
+
+  /* **** Device width **** */
+  //This design is mobile first
+  $mobile-width: 576px;
+  $tablet-width: 768px;
+  $desktop-width: 992px;
+  $largeDesktop-width: 1200px;
+
+  /* **** helper variable **** */
+  $sideBarOpenWidth: 300px;
+  $sideBarCloseWidth: 70px;
+  $spacing: 60px;
+  $mobileSpacing: 16px;
 }
 
 [theme="dark"] {
