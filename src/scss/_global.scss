@@ -1,0 +1,67 @@
+@use "./abstracts/" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap");
+
+//reset
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+//general styles
+body {
+  background-color: $bgc;
+  color: $text-color;
+  font-family: $fontFamily;
+  font-size: $fontSizeBodyLarge;
+  line-height: 1.5em;
+  overflow-x: hidden;
+}
+
+.title {
+  font-size: $fontSizeHeadlineSmall;
+  font-weight: 700;
+  line-height: 2em;
+}
+
+.subTitle {
+  font-size: $fontSizeBodyLarge;
+}
+
+.status {
+  display: inline-block;
+  padding: 4px 10px;
+  text-align: center;
+  font-size: 9px;
+  border-radius: $largeBorderRadius;
+  .approved {
+    background-color: $approved-bgc;
+    color: $approved-textColor;
+  }
+  .pending {
+    background-color: $pending-bgc;
+    color: $pending-textColor;
+  }
+  .rejected {
+    background-color: $rejected-bgc;
+    color: $rejected-textColor;
+  }
+}
