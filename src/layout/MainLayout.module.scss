@@ -1,0 +1,16 @@
+@use "../scss/abstracts/" as *;
+
+.container {
+  display: flex;
+}
+
+.main {
+  background-color: $card-bgc;
+  overflow-x: hidden;
+  flex-grow: 1;
+  //   border: 1px solid green;
+  &__content {
+    min-width: 100vh;
+    padding: 0.8rem 2rem;
+  }
+}
