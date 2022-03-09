@@ -1,6 +1,6 @@
 const sidebarNav = [
   {
-    link: "/dashboard",
+    link: "/",
     section: "dashboard",
     icon: "radix-icons:dashboard", //width:"20"
     text: "Dashboard",
