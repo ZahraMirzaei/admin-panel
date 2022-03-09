@@ -1,4 +1,4 @@
-@use './abstracts/' as *;
+@use "./abstracts/" as *;
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap");
 
@@ -31,9 +31,12 @@ body {
   background-color: $bgc;
   color: $text-color;
   font-family: $fontFamily;
-  font-size: $fontSizeBodyLarge;
+  font-size: $fontSizeBodyMedium;
   line-height: 1.5em;
   overflow-x: hidden;
+  @include tablet {
+    background-color: $secondaryColor;
+  }
 }
 
 .title {
