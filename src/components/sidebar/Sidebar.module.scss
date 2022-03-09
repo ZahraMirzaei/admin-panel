@@ -17,15 +17,59 @@
   @include tablet {
     width: 100vw;
     z-index: 1;
-    // opacity: 0;
-    // visibility: hidden;
-    user-select: none;
     background-color: $secondaryColor;
     color: #ebebeb;
+    user-select: none;
+    // opacity: 0;
+    // visibility: hidden;
   }
 
   &__logo {
     @include flex();
-    width: 12rem;
+    width: $sideBarLogoHeight;
+    text-align: center;
+
+    img {
+      --size: 7.5rem;
+      width: var(--size);
+      height: var(--size);
+    }
   }
+
+  &__menu {
+    @include flex(stretch, flex-start);
+    flex-direction: column;
+    flex-grow: 1;
+
+    &__item {
+      @include flex(center, flex-start);
+      position: relative;
+      margin-bottom: 1.2rem;
+      padding-left: 16%;
+      transition: color 0.1s ease-in-out;
+
+      &:hover {
+        color: $primaryColor;
+      }
+
+      &.active {
+        font-weight: 700;
+        color: $primaryColor;
+      }
+
+      &__icon {
+        @include flex(center, center);
+        margin-right: 1rem;
+
+        svg {
+          width: $smallIconSize;
+          height: $smallIconSize;
+        }
+      }
+    }
+  }
+}
+
+.logout {
+  align-self: flex-end;
 }
