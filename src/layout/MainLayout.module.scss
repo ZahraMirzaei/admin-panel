@@ -8,14 +8,17 @@
   background-color: $card-bgc;
   overflow-x: hidden;
   flex-grow: 1;
+  border: 1px solid red;
 
   &__content {
     min-height: 100vh;
-    padding: 0.8rem 2rem;
+    padding: 0.8rem 16.375rem;
     transition: all 0.3s ease-in-out;
 
     @include tablet {
+      padding: 0.8rem 2rem;
       position: relative;
+      background-color: $card-bgc;
       z-index: 100;
     }
 
