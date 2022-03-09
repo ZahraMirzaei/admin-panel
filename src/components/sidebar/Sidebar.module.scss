@@ -1,0 +1,13 @@
+@use "../../scss/abstracts/" as *;
+
+.sideBar {
+  //   border: 1px solid red;
+  width: $sideBarOpenWidth;
+  transition: all 0.3s ease-in-out;
+  @include tablet {
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+    user-select: none;
+  }
+}

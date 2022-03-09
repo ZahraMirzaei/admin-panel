@@ -3,20 +3,20 @@ import { Outlet } from "react-router-dom";
 
 import Sidebar from "../components/sidebar/Sidebar";
 import TopNav from "../components/topnav/TopNav";
-// import classes from "./MainLayout.module.scss"
+import classes from "./MainLayout.module.scss";
 
-function MainLayout() {
+const MainLayout = () => {
   return (
-    <>
+    <div className={classes.container}>
       <Sidebar />
-      <div className="main">
-        <div className="main__content">
+      <div className={classes.main}>
+        <div className={classes.main__content}>
           <TopNav />
           <Outlet />
         </div>
       </div>
-    </>
+    </div>
   );
-}
+};
 
 export default MainLayout;
