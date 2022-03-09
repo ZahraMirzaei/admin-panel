@@ -31,7 +31,7 @@ body {
   background-color: $bgc;
   color: $text-color;
   font-family: $fontFamily;
-  font-size: $fontSizeBodyMedium;
+  font-size: $fontSizeBodySmall;
   line-height: 1.5em;
   overflow-x: hidden;
   @include tablet {
