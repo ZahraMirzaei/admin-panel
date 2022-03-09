@@ -8,9 +8,19 @@
   background-color: $card-bgc;
   overflow-x: hidden;
   flex-grow: 1;
-  //   border: 1px solid green;
+
   &__content {
-    min-width: 100vh;
+    min-height: 100vh;
     padding: 0.8rem 2rem;
+    transition: all 0.3s ease-in-out;
+
+    @include tablet {
+      position: relative;
+      z-index: 100;
+    }
+
+    @include mobile {
+      padding: 0.8rem 1rem;
+    }
   }
 }
