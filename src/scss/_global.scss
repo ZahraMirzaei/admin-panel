@@ -26,6 +26,16 @@ a {
   color: unset;
 }
 
+input {
+  font-family: inherit;
+  color: inherit;
+  font-size: inherit;
+}
+
+::placeholder {
+  color: #b9b9b9;
+}
+
 //general styles
 body {
   background-color: $bgc;
