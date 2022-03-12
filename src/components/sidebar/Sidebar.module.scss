@@ -55,6 +55,18 @@
       &.active {
         font-weight: 700;
         color: $primaryColor;
+
+        &::before {
+          content: "";
+          width: 4px;
+          height: 100%;
+          background-color: $primaryColor;
+          border-top-right-radius: 3px;
+          border-bottom-right-radius: 3px;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
       }
 
       &__icon {
