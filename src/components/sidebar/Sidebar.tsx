@@ -7,6 +7,15 @@ import classes from "./Sidebar.module.scss";
 
 function Sidebar() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const location = useLocation();
+
+  useEffect(() => {
+    const curPath = window.location.pathname.split("/")[1];
+    const activeItem = sidebarNav.findIndex((item) => item.section === curPath);
+
+    setActiveIndex(curPath.length === 0 ? 0 : activeItem);
+  }, [location]);
+
   return (
     <div className={classes.sidebar}>
       <div className={classes.sidebar__logo}>
