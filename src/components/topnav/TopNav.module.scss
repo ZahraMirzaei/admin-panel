@@ -1,0 +1,14 @@
+@use "../../scss/abstracts/" as *;
+
+.topNav {
+  display: flex;
+
+  &_left {
+    @include flex(center, flex-start);
+    flex: 1;
+    // border: 1px solid red;
+  }
+
+  &_right {
+  }
+}
