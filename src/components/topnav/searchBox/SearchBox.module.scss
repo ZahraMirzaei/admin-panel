@@ -1,0 +1,25 @@
+@use "../../../scss/abstracts/" as *;
+
+.searchBox {
+  @include flex(center, center);
+  flex: 1;
+  border: 1.5px solid rgb(187, 187, 187);
+  border-radius: 100vw;
+  padding: 0.2rem 0.5rem;
+  margin-left: 2rem;
+  &_input {
+    border: none;
+    outline: none;
+    background-color: inherit;
+    margin-left: 0.5rem;
+    flex: 1;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 30px $card-bgc inset !important;
+      box-shadow: 0 0 0 30px $card-bgc inset !important;
+    }
+  }
+}
