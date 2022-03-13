@@ -15,4 +15,8 @@
   position: absolute;
   left: 2px;
   top: 2px;
+  transition: all 0.3s ease-in-out;
+  &.darkMode {
+    left: 50%;
+  }
 }
