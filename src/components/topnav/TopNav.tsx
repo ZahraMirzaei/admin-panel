@@ -12,6 +12,10 @@ function TopNav() {
         <Icon icon="ci:menu-alt-03" color="#424750" width="24" />
         <SearchBox />
       </div>
+
+      <div className={classes.topNav_right}>
+        <TopNavRightBox />
+      </div>
     </div>
   );
 }
