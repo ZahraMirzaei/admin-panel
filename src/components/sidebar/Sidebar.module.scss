@@ -16,7 +16,7 @@
   overflow-x: hidden;
 
   &.sidebar_close {
-    width: 40px;
+    width: 44px;
   }
 
   @include tablet {
@@ -33,7 +33,7 @@
     // @include flex();
     // width: $sideBarLogoHeight;
     text-align: center;
-    padding: 2px;
+    padding: 4px;
 
     img {
       --size: 7.5rem;
@@ -52,7 +52,7 @@
       position: relative;
       margin-bottom: 1.2rem;
       padding-left: 16px;
-      transition: color 0.1s ease-in-out;
+      transition: all 0.3s ease-in-out;
 
       &:hover {
         color: $primaryColor;
@@ -61,6 +61,7 @@
       &.active {
         font-weight: 700;
         color: $primaryColor;
+        padding-left: 20px;
 
         &::before {
           content: "";
