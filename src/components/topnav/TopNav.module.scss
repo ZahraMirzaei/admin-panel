@@ -7,6 +7,10 @@
     @include flex(center, flex-start);
     flex: 1;
     // border: 1px solid red;
+
+    &_menu_icon {
+      cursor: pointer;
+    }
   }
 
   &_right {

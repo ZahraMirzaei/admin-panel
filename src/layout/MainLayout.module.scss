@@ -12,8 +12,11 @@
 
   &__content {
     min-height: 100vh;
-    padding: 0.8rem 0.8rem 0.8rem 15rem;
+    padding: 0.8rem 2.5rem 0.8rem 15rem;
     transition: all 0.3s ease-in-out;
+    &.close_sidebar {
+      padding: 0.8rem 2rem 0.8rem 4.5rem;
+    }
 
     @include tablet {
       padding: 0.8rem 2rem;

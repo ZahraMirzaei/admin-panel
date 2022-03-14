@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { images } from "../../constants";
 import sidebarNav from "../../config/sidebarNav";
+import SidebarContext from "../../store/sidebarContext";
 import { Icon } from "@iconify/react";
 import classes from "./Sidebar.module.scss";
 
 function Sidebar() {
   const [activeIndex, setActiveIndex] = useState(0);
   const location = useLocation();
+  const sidebarCtx = useContext(SidebarContext);
 
   useEffect(() => {
     const curPath = window.location.pathname.split("/")[1];
@@ -17,7 +19,11 @@ function Sidebar() {
   }, [location]);
 
   return (
-    <div className={classes.sidebar}>
+    <div
+      className={`${classes.sidebar} ${
+        !sidebarCtx.isOpen && classes.sidebar_close
+      }`}
+    >
       <div className={classes.sidebar__logo}>
         <img src={images.logo} alt="digikala" />
       </div>
