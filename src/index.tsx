@@ -1,5 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import { SidebarContextProvider } from "./store/sidebarContext";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+  <SidebarContextProvider>
+    <App />
+  </SidebarContextProvider>,
+  document.getElementById("root")
+);
