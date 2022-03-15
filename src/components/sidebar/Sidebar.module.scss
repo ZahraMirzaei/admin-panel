@@ -6,7 +6,7 @@
   flex-direction: column;
   background-color: $bgc;
   color: $text-color !important;
-  border: 1px solid blue;
+  // border: 1px solid blue;
   width: $sideBarOpenWidth;
   height: 100vh;
   position: fixed;
@@ -33,7 +33,7 @@
     // @include flex();
     // width: $sideBarLogoHeight;
     text-align: center;
-    padding: 0 10px;
+    padding: 0 12px 2rem;
 
     img {
       --size: 7.5rem;
@@ -50,7 +50,7 @@
     &__item {
       @include flex(center, flex-start);
       position: relative;
-      margin-bottom: 1.2rem;
+      margin-bottom: 2rem;
       padding-left: 16px;
       transition: all 0.3s ease-in-out;
 
@@ -102,7 +102,9 @@ html[dir="rtl"] {
       &__item {
         padding-left: 0;
         // padding-right: 16px;
-        font-weight: 500;
+        // font-weight: 500;
+        font-size: 18px;
+        // margin-bottom: 1.5rem;
         &.active {
           padding-right: 4px;
           font-weight: 700;
@@ -122,7 +124,7 @@ html[dir="rtl"] {
     }
     &.sidebar_close .sidebar__logo {
       direction: ltr;
-      width: 44px;
+      width: 46px;
       margin-right: 10px;
       overflow: hidden;
     }
