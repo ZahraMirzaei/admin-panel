@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useLocalStorage } from "usehooks-ts";
 
 type langContextObj = {
@@ -7,7 +7,7 @@ type langContextObj = {
 };
 
 const LangContext = React.createContext<langContextObj>({
-  lang: "en",
+  lang: "",
   toggleLanguage: () => {},
 });
 
