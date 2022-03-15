@@ -18,6 +18,7 @@ function LangBox() {
 
   useEffect(() => {
     document.documentElement.dir = lang === "en" ? "ltr" : "rtl";
+    document.documentElement.lang = lang === "en" ? "en" : "fa";
   }, [lang]);
   const checkIfClickedOutside = useCallback(() => {
     // If the menu is open and the clicked target is not within the menu,
