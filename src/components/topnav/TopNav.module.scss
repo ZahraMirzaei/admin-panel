@@ -16,3 +16,9 @@
   &_right {
   }
 }
+
+html[dir="rtl"] {
+  .topNav_left_menu_icon {
+    transform: rotate(180deg);
+  }
+}

@@ -13,7 +13,7 @@
   top: 0;
   transition: all 0.3s ease-in-out;
   z-index: 200;
-  overflow-x: hidden;
+  overflow: hidden;
 
   &.sidebar_close {
     width: 44px;
@@ -85,10 +85,46 @@
           height: $smallIconSize;
         }
       }
+      &__txt {
+        white-space: nowrap;
+      }
     }
   }
 }
 
 .logout {
   align-self: flex-end;
+}
+
+html[dir="rtl"] {
+  .sidebar {
+    &__menu {
+      &__item {
+        padding-left: 0;
+        // padding-right: 16px;
+
+        &.active {
+          padding-right: 4px;
+
+          &::before {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            right: 0;
+          }
+        }
+
+        &__icon {
+          margin-left: 1rem;
+        }
+      }
+    }
+    &.sidebar_close .sidebar__logo {
+      direction: ltr;
+      width: 40px;
+      margin-right: 6px;
+      overflow: hidden;
+    }
+  }
 }

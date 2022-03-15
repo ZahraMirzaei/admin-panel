@@ -1,8 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import i18n from "../../locale";
 import { images } from "../../constants";
 import sidebarNav from "../../config/sidebarNav";
 import SidebarContext from "../../store/sidebarContext";
+import LangContext from "../../store/langContext";
 import { Icon } from "@iconify/react";
 import classes from "./Sidebar.module.scss";
 
@@ -10,6 +13,10 @@ function Sidebar() {
   const [activeIndex, setActiveIndex] = useState(0);
   const location = useLocation();
   const sidebarCtx = useContext(SidebarContext);
+  const languageCtx = useContext(LangContext);
+  const { t } = useTranslation();
+
+  const language = languageCtx.lang;
 
   useEffect(() => {
     const curPath = window.location.pathname.split("/")[1];
@@ -17,6 +24,9 @@ function Sidebar() {
 
     setActiveIndex(curPath.length === 0 ? 0 : activeItem);
   }, [location]);
+  useEffect(() => {
+    i18n.changeLanguage(language!);
+  }, [language]);
 
   return (
     <div
@@ -39,7 +49,9 @@ function Sidebar() {
             <div className={classes.sidebar__menu__item__icon}>
               <Icon icon={nav.icon} />
             </div>
-            <div className={classes.sidebar__menu__item__txt}>{nav.text}</div>
+            <div className={classes.sidebar__menu__item__txt}>
+              {t(nav.section)}
+            </div>
           </Link>
         ))}
       </div>
@@ -49,7 +61,7 @@ function Sidebar() {
           <div className={classes.sidebar__menu__item__icon}>
             <Icon icon="tabler:logout" />
           </div>
-          <div className={classes.sidebar__menu__item__txt}>Logout</div>
+          <div className={classes.sidebar__menu__item__txt}>{t("logout")}</div>
         </Link>
       </div>
     </div>

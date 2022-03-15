@@ -16,6 +16,9 @@
     transition: all 0.3s ease-in-out;
     &.close_sidebar {
       padding: 0.8rem 2rem 0.8rem 4.5rem;
+      @include tablet {
+        padding: 0.8rem 2rem 0.8rem 2rem;
+      }
     }
 
     @include tablet {
@@ -27,6 +30,21 @@
 
     @include mobile {
       padding: 0.8rem 1rem;
+    }
+  }
+}
+
+html[dir="rtl"] {
+  .main__content {
+    padding: 0.8rem 15rem 0.8rem 2.5rem;
+    &.close_sidebar {
+      padding: 0.8rem 4.5rem 0.8rem 2rem;
+      @include tablet {
+        padding: 0.8rem 2rem 0.8rem 2rem;
+      }
+    }
+    @include tablet {
+      padding: 0.8rem 2rem;
     }
   }
 }
