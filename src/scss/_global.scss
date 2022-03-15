@@ -41,11 +41,17 @@ body {
   background-color: $bgc;
   color: $text-color;
   font-family: $fontFamily;
-  font-size: $fontSizeBodySmall;
+  font-size: $fontSizeBodyLarge;
   line-height: 1.5em;
   overflow-x: hidden;
   @include tablet {
     background-color: $secondaryColor;
+  }
+}
+
+html[dir="rtl"] {
+  body {
+    // font-weight: 500;
   }
 }
 
