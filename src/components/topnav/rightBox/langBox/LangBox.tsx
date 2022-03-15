@@ -35,10 +35,6 @@ function LangBox() {
     setShowLangBox((prev) => !prev);
   };
 
-  function changeLangHandler() {
-    langCtx.toggleLanguage();
-  }
-
   return (
     <div className={classes.lang} ref={langBoxRef}>
       <div className={classes.lanBox} onClick={showBoxHandler}>
@@ -51,8 +47,8 @@ function LangBox() {
       <div
         className={`${classes.lang_menu} ${showLangBox ? classes.show : ""}`}
       >
-        <div onClick={changeLangHandler}>English (en)</div>
-        <div onClick={changeLangHandler}>Farsi (fa)</div>
+        <div onClick={() => langCtx.toggleLanguage("en")}>English (en)</div>
+        <div onClick={() => langCtx.toggleLanguage("fa")}>Farsi (fa)</div>
       </div>
     </div>
   );
