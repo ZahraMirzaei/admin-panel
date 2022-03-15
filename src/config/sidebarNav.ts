@@ -2,7 +2,7 @@ const sidebarNav = [
   {
     link: "/",
     section: "dashboard",
-    icon: "radix-icons:dashboard", //width:"20"
+    icon: "lucide:layout-dashboard", //width:"20"
     text: "Dashboard",
   },
   {
@@ -20,7 +20,7 @@ const sidebarNav = [
   {
     link: "/customers",
     section: "customers",
-    icon: "ph:users",
+    icon: "ph:users-bold",
     text: "Customers",
   },
   {
