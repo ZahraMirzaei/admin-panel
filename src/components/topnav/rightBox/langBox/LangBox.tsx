@@ -1,14 +1,24 @@
-import React, { useState, useRef, useCallback } from "react";
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  useCallback,
+  useContext,
+} from "react";
 import { Icon } from "@iconify/react";
 import { useOnClickOutside } from "usehooks-ts";
+import LangContext from "../../../../store/langContext";
 import classes from "./LangBox.module.scss";
 
 function LangBox() {
-  const [lang, setLang] = useState("en");
   const [showLangBox, setShowLangBox] = useState(false);
-
   const langBoxRef = useRef<HTMLDivElement>(null);
+  const langCtx = useContext(LangContext);
+  const lang = langCtx.lang;
 
+  useEffect(() => {
+    document.documentElement.dir = lang === "en" ? "ltr" : "rtl";
+  }, [lang]);
   const checkIfClickedOutside = useCallback(() => {
     // If the menu is open and the clicked target is not within the menu,
     // then close the menu
@@ -25,6 +35,10 @@ function LangBox() {
     setShowLangBox((prev) => !prev);
   };
 
+  function changeLangHandler() {
+    langCtx.toggleLanguage();
+  }
+
   return (
     <div className={classes.lang} ref={langBoxRef}>
       <div className={classes.lanBox} onClick={showBoxHandler}>
@@ -37,8 +51,8 @@ function LangBox() {
       <div
         className={`${classes.lang_menu} ${showLangBox ? classes.show : ""}`}
       >
-        <div>English (en)</div>
-        <div>Farsi (fa)</div>
+        <div onClick={changeLangHandler}>English (en)</div>
+        <div onClick={changeLangHandler}>Farsi (fa)</div>
       </div>
     </div>
   );
