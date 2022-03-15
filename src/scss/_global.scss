@@ -50,13 +50,13 @@ body {
 }
 
 .title {
-  font-size: $fontSizeHeadlineSmall;
+  font-size: $fontSizeBodyMedium;
   font-weight: 700;
   line-height: 2em;
 }
 
 .subTitle {
-  font-size: $fontSizeBodyLarge;
+  font-size: $fontSizeBodySmall;
 }
 
 .status {
@@ -77,4 +77,14 @@ body {
     background-color: $rejected-bgc;
     color: $rejected-textColor;
   }
+}
+
+.ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+.rtl {
+  direction: rtl;
+  text-align: right;
 }
