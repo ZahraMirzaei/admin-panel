@@ -16,7 +16,7 @@
   overflow: hidden;
 
   &.sidebar_close {
-    width: 44px;
+    width: 50px;
   }
 
   @include tablet {
@@ -33,7 +33,7 @@
     // @include flex();
     // width: $sideBarLogoHeight;
     text-align: center;
-    padding: 4px;
+    padding: 0 10px;
 
     img {
       --size: 7.5rem;
@@ -102,10 +102,10 @@ html[dir="rtl"] {
       &__item {
         padding-left: 0;
         // padding-right: 16px;
-
+        font-weight: 500;
         &.active {
           padding-right: 4px;
-
+          font-weight: 700;
           &::before {
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
@@ -122,8 +122,8 @@ html[dir="rtl"] {
     }
     &.sidebar_close .sidebar__logo {
       direction: ltr;
-      width: 40px;
-      margin-right: 6px;
+      width: 44px;
+      margin-right: 10px;
       overflow: hidden;
     }
   }

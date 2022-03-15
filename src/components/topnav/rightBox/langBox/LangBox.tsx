@@ -16,6 +16,9 @@ function LangBox() {
   const langCtx = useContext(LangContext);
   const lang = langCtx.lang;
 
+  const showBoxHandler = function toDo() {
+    setShowLangBox((prev) => !prev);
+  };
   useEffect(() => {
     document.documentElement.dir = lang === "en" ? "ltr" : "rtl";
     document.documentElement.lang = lang === "en" ? "en" : "fa";
@@ -29,12 +32,8 @@ function LangBox() {
     console.log("show or hide");
   }, [showLangBox]);
 
-  //custom hook
+  //custom hook - when click outside of langbox, it will close.
   useOnClickOutside(langBoxRef, checkIfClickedOutside);
-
-  const showBoxHandler = function toDo() {
-    setShowLangBox((prev) => !prev);
-  };
 
   return (
     <div className={classes.lang} ref={langBoxRef}>
@@ -48,8 +47,22 @@ function LangBox() {
       <div
         className={`${classes.lang_menu} ${showLangBox ? classes.show : ""}`}
       >
-        <div onClick={() => langCtx.toggleLanguage("en")}>English (en)</div>
-        <div onClick={() => langCtx.toggleLanguage("fa")}>Farsi (fa)</div>
+        <div
+          onClick={() => {
+            langCtx.toggleLanguage("en");
+            showBoxHandler();
+          }}
+        >
+          English (en)
+        </div>
+        <div
+          onClick={() => {
+            langCtx.toggleLanguage("fa");
+            showBoxHandler();
+          }}
+        >
+          Farsi (fa)
+        </div>
       </div>
     </div>
   );

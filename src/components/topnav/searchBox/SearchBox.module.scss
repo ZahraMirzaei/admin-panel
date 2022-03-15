@@ -28,5 +28,9 @@ html[dir="rtl"] {
   .searchBox {
     margin-left: 0;
     margin-right: 2rem;
+    &_input {
+      margin-left: 0rem;
+      margin-right: 0.5rem;
+    }
   }
 }

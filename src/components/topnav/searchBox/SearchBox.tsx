@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Icon } from "@iconify/react";
+import { useTranslation } from "react-i18next";
+import i18n from "../../../locale";
+import LangContext from "../../../store/langContext";
 
 import classes from "./SearchBox.module.scss";
 
 function SearchBox() {
+  const languageCtx = useContext(LangContext);
+  const { t } = useTranslation();
+
+  const language = languageCtx.lang;
+
+  useEffect(() => {
+    i18n.changeLanguage(language!);
+  }, [language]);
+
   return (
     <div className={classes.searchBox}>
       <Icon
@@ -14,7 +26,7 @@ function SearchBox() {
       />
       <input
         type="search"
-        placeholder="Search"
+        placeholder={t("search")}
         name="search"
         className={classes.searchBox_input}
       />
