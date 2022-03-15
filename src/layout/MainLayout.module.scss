@@ -5,7 +5,7 @@
 }
 
 .main {
-  background-color: $card-bgc;
+  background-color: var(--card-bgc);
   overflow-x: hidden;
   flex-grow: 1;
   border: 1px solid red;
@@ -24,7 +24,7 @@
     @include tablet {
       padding: 0.8rem 2rem;
       position: relative;
-      background-color: $card-bgc;
+      background-color: var(--card-bgc);
       z-index: 100;
     }
 

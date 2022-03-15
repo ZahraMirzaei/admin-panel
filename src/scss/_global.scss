@@ -1,6 +1,36 @@
 @use "./abstracts/" as *;
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap");
+html {
+  /* ****Colors**** */
+  --primaryColor: #ee384e;
+  --secondaryColor: #3c4b6d;
+  //light theme
+  --bgc: #f2f2f2;
+  --card-bgc: #f9f9fa;
+  --text-color: #424750;
+  //light theme status
+  --approved-bgc: rgba(86, 240, 0, 0.3);
+  --approved-textColor: #246500;
+  --pending-bgc: rgba(45, 204, 255, 0.3);
+  --pending-textColor: #086785;
+  --rejected-bgc: rgba(255, 56, 56, 0.3);
+  --rejected-textColor: #9d0e0e;
+}
+html[theme="dark"] {
+  //dark theme
+  --bgc: #283036;
+  --card-bgc: #1e2529;
+  --text-color: #ebebeb;
+
+  //light theme status
+  --approved-bgc: rgba(66, 171, 8, 0.3);
+  --approved-textColor: #d0ffb6;
+  --pending-bgc: rgba(45, 204, 255, 0.3);
+  --pending-textColor: #a5e9ff;
+  --rejected-bgc: rgba(255, 56, 56, 0.3);
+  --rejected-textColor: #f2bebe;
+}
 
 //reset
 *,
@@ -38,20 +68,14 @@ input {
 
 //general styles
 body {
-  background-color: $bgc;
-  color: $text-color;
+  background-color: var(--bgc);
+  color: var(--text-color);
   font-family: $fontFamily;
   font-size: $fontSizeBodyLarge;
   line-height: 1.5em;
   overflow-x: hidden;
   @include tablet {
-    background-color: $secondaryColor;
-  }
-}
-
-html[dir="rtl"] {
-  body {
-    // font-weight: 500;
+    background-color: var(--secondaryColor);
   }
 }
 
@@ -72,16 +96,16 @@ html[dir="rtl"] {
   font-size: 9px;
   border-radius: $largeBorderRadius;
   .approved {
-    background-color: $approved-bgc;
-    color: $approved-textColor;
+    background-color: var(--approved-bgc);
+    color: var(--approved-textColor);
   }
   .pending {
-    background-color: $pending-bgc;
-    color: $pending-textColor;
+    background-color: var(--pending-bgc);
+    color: var(--pending-textColor);
   }
   .rejected {
-    background-color: $rejected-bgc;
-    color: $rejected-textColor;
+    background-color: var(--rejected-bgc);
+    color: var(--rejected-textColor);
   }
 }
 

@@ -20,7 +20,6 @@ function SearchBox() {
     <div className={classes.searchBox}>
       <Icon
         icon="fluent:search-28-filled"
-        color="gray"
         width="14"
         style={{ fontWeight: "bold" }}
       />

@@ -4,8 +4,8 @@
 .sidebar {
   @include flex(stretch, center);
   flex-direction: column;
-  background-color: $bgc;
-  color: $text-color !important;
+  background-color: var(--bgc);
+  color: var(--text-color) !important;
   // border: 1px solid blue;
   width: $sideBarOpenWidth;
   height: 100vh;
@@ -22,7 +22,7 @@
   @include tablet {
     width: 100vw;
     z-index: 1;
-    background-color: $secondaryColor;
+    background-color: var(--secondaryColor);
     color: #ebebeb;
     user-select: none;
     // opacity: 0;
@@ -55,19 +55,19 @@
       transition: all 0.3s ease-in-out;
 
       &:hover {
-        color: $primaryColor;
+        color: var(--primaryColor);
       }
 
       &.active {
         font-weight: 700;
-        color: $primaryColor;
+        color: var(--primaryColor);
         padding-left: 20px;
 
         &::before {
           content: "";
           width: 4px;
           height: 100%;
-          background-color: $primaryColor;
+          background-color: var(--primaryColor);
           border-top-right-radius: 3px;
           border-bottom-right-radius: 3px;
           position: absolute;

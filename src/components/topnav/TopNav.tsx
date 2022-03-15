@@ -16,7 +16,7 @@ function TopNav() {
     <div className={classes.topNav}>
       <div className={classes.topNav_left}>
         <div className={classes.topNav_left_menu_icon} onClick={clickHandler}>
-          <Icon icon="ci:menu-alt-03" color="#424750" width="24" />
+          <Icon icon="ci:menu-alt-03" width="24" />
         </div>
         <SearchBox />
       </div>

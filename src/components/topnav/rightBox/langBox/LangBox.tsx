@@ -38,11 +38,11 @@ function LangBox() {
   return (
     <div className={classes.lang} ref={langBoxRef}>
       <div className={classes.lanBox} onClick={showBoxHandler}>
-        <Icon icon="clarity:language-line" color="#424750" width="20" />
+        <Icon icon="clarity:language-line" width="20" />
 
         <div className={classes.lang_slc}>{lang}</div>
 
-        <Icon icon="ep:arrow-down-bold" color="#424750" width="10" />
+        <Icon icon="ep:arrow-down-bold" width="10" />
       </div>
       <div
         className={`${classes.lang_menu} ${showLangBox ? classes.show : ""}`}
