@@ -9,17 +9,17 @@ const summaryData: IsummData[] = [
   {
     icon: "akar-icons:shopping-bag",
     text: "thisMonthSales",
-    amount: "5,340$",
+    amount: "salesAmount",
   },
   {
     icon: "icon-park-outline:transaction-order",
     text: "thisMonthOrders",
-    amount: "3000",
+    amount: "orderAmount",
   },
   {
     icon: "jam:coin",
     text: "thisMonthRevenue",
-    amount: "2,500$",
+    amount: "revenueAmount",
   },
 ];
 
