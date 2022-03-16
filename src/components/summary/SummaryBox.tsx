@@ -15,7 +15,10 @@ const SummaryBox: React.FC<{ item: IsummData }> = (props) => {
           </div>
           <div className={classes.summary__box__info}>
             <p>{t(props.item.text)}</p>
-            <h4>{t(props.item.amount)}</h4>
+            <div className={classes.summary__box__info__amount}>
+              <h4>{t(props.item.amount)}</h4>
+              <sup>{t(props.item.currency)}</sup>
+            </div>
           </div>
         </div>
       </Card>
