@@ -1,7 +1,14 @@
 import React from "react";
-
+import { useTranslation } from "react-i18next";
+import Summary from "../components/summary/Summary";
 function Dashboard() {
-  return <div>Dashboard</div>;
+  const { t } = useTranslation();
+  return (
+    <section>
+      <h2>{t("dashboard")}</h2>
+      <Summary />
+    </section>
+  );
 }
 
 export default Dashboard;

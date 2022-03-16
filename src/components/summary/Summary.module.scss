@@ -1,0 +1,10 @@
+@use "../../scss/abstracts/" as *;
+.summary {
+  margin: 2rem 0;
+
+  &__box {
+    @include flex(center, space-between);
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+}
