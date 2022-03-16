@@ -1,6 +1,6 @@
 @use "../../scss/abstracts/" as *;
 .summary {
-  margin: 2rem 0;
+  margin: 3rem 0;
 
   &__box {
     @include flex(center, space-between);

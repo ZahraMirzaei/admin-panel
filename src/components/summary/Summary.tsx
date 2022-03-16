@@ -30,7 +30,7 @@ function Summary() {
   const { t } = useTranslation();
   return (
     <section className={classes.summary}>
-      <p>{t("summary")}</p>
+      <p className="subTitle">{t("summary")}</p>
       <div className={classes.summary__box}>
         {summaryData.map((item) => (
           <SummaryBox key={item.text} item={item} />

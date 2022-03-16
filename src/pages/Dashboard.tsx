@@ -5,7 +5,7 @@ function Dashboard() {
   const { t } = useTranslation();
   return (
     <section>
-      <h2>{t("dashboard")}</h2>
+      <h2 className="title">{t("dashboard")}</h2>
       <Summary />
     </section>
   );
