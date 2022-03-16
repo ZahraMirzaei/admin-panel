@@ -8,16 +8,15 @@
   background-color: var(--card-bgc);
   overflow-x: hidden;
   flex-grow: 1;
-  border: 1px solid red;
 
   &__content {
     min-height: 100vh;
-    padding: 0.8rem 2.5rem 0.8rem 15rem;
+    padding: 1rem 2.5rem 1rem 17rem;
     transition: all 0.3s ease-in-out;
     &.close_sidebar {
-      padding: 0.8rem 2rem 0.8rem 4.5rem;
+      padding: 1rem 2.5rem 1rem 6rem;
       @include tablet {
-        padding: 0.8rem 2rem 0.8rem 2rem;
+        padding: 1rem 2rem 1rem 2rem;
       }
     }
 
@@ -36,9 +35,9 @@
 
 html[dir="rtl"] {
   .main__content {
-    padding: 0.8rem 15rem 0.8rem 2.5rem;
+    padding: 1rem 17rem 1rem 2.5rem;
     &.close_sidebar {
-      padding: 0.8rem 4.5rem 0.8rem 2rem;
+      padding: 1rem 6rem 1rem 2rem;
       @include tablet {
         padding: 0.8rem 2rem 0.8rem 2rem;
       }
