@@ -1,0 +1,9 @@
+@use "../../scss/abstracts/" as *;
+
+.card {
+  @include flex();
+  background-color: var(--card-bgc);
+  border-radius: $mediumBorderRadius;
+  box-shadow: $mainBoxShadow;
+  padding: 1rem 2.5rem;
+}
