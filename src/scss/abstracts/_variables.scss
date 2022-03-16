@@ -1,5 +1,5 @@
 /* ****Fonts**** */
-$fontFamily: "Poppins", "Roboto", sans-serif;
+
 //Body size
 $fontSizeBodySmall: 12px; //line-height:16px; letter-spacing:0.4%;
 $fontSizeBodyMedium: 14px; //line-height:20px; letter-spacing:0.25%;
@@ -39,7 +39,3 @@ $sideBarCloseWidth: 75px;
 $spacing: 60px;
 $mobileSpacing: 16px;
 $sideBarLogoHeight: 171px;
-
-html[dir="rtl"] {
-  $fontFamily: iranyekan, "IRANSans", "Tahoma";
-}

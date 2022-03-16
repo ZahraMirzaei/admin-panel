@@ -1,6 +1,8 @@
 @use "./abstracts/" as *;
+@import url(../assets/fonts/css/fontiran.css);
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap");
+
 html {
   /* ****Colors**** */
   --primaryColor: #ee384e;
@@ -16,6 +18,9 @@ html {
   --pending-textColor: #086785;
   --rejected-bgc: rgba(255, 56, 56, 0.3);
   --rejected-textColor: #9d0e0e;
+
+  /* ****Font family**** */
+  --fontFamily: "Poppins", "Roboto", sans-serif;
 }
 html[theme="dark"] {
   //dark theme
@@ -30,6 +35,10 @@ html[theme="dark"] {
   --pending-textColor: #a5e9ff;
   --rejected-bgc: rgba(255, 56, 56, 0.3);
   --rejected-textColor: #f2bebe;
+}
+
+html[dir="rtl"] {
+  --fontFamily: iranyekan, "IRANSans", "Tahoma";
 }
 
 //reset
@@ -70,7 +79,7 @@ input {
 body {
   background-color: var(--bgc);
   color: var(--text-color);
-  font-family: $fontFamily;
+  font-family: var(--fontFamily);
   font-size: $fontSizeBodyLarge;
   line-height: 1.5em;
   overflow-x: hidden;
