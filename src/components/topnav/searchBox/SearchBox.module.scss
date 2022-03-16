@@ -2,7 +2,7 @@
 
 .searchBox {
   @include flex(center, center);
-  flex: 1;
+
   border: 1.5px solid rgb(187, 187, 187);
   border-radius: 100vw;
   padding: 0.2rem 0.5rem;
@@ -22,6 +22,9 @@
       box-shadow: 0 0 0 30px var(--card-bgc) inset !important;
     }
   }
+  @media screen and (max-width: 950px) {
+    margin-left: 0;
+  }
 }
 
 html[dir="rtl"] {
@@ -31,6 +34,11 @@ html[dir="rtl"] {
     &_input {
       margin-left: 0rem;
       margin-right: 0.5rem;
+    }
+
+    @media screen and (max-width: 950px) {
+      margin-right: 0;
+      margin-top: 1rem;
     }
   }
 }

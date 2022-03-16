@@ -18,11 +18,14 @@ function TopNav() {
         <div className={classes.topNav_left_menu_icon} onClick={clickHandler}>
           <Icon icon="ci:menu-alt-03" width="24" />
         </div>
-        <SearchBox />
+        <div className={classes.search_desktop_wrapper}>
+          <SearchBox />
+        </div>
       </div>
-
-      <div className={classes.topNav_right}>
-        <TopNavRightBox />
+      <TopNavRightBox />
+      <br />
+      <div className={classes.search_tablet_wrapper}>
+        <SearchBox />
       </div>
     </div>
   );

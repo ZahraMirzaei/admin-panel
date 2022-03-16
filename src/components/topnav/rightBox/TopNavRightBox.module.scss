@@ -1,5 +1,10 @@
 @use "../../../scss/abstracts/" as *;
 
 .topNavBox_right {
+  @include flex(center, space-evenly);
+  flex: 1;
+}
+.wrapper {
+  flex: 1;
   @include flex(center, flex-end);
 }

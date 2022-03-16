@@ -1,3 +1,4 @@
+@use "../../../../scss/abstracts/" as *;
 .themeBox {
   width: 40px;
   height: 22px;
@@ -5,6 +6,11 @@
   border-radius: 30px;
   padding: 1px;
   position: relative;
+  margin: 0 2rem;
+  cursor: pointer;
+  @include mobile {
+    margin: 0;
+  }
 }
 
 .toggle {

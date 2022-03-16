@@ -10,7 +10,6 @@
     border-radius: 50%;
     overflow: hidden;
     margin: 0 0.5rem;
-
     & img {
       object-fit: cover;
     }
@@ -18,6 +17,7 @@
 
   &__userName {
     font-size: $fontSizeBodyLarge;
+    white-space: nowrap;
   }
   &__role {
     font-size: $fontSizeBodyMedium;
