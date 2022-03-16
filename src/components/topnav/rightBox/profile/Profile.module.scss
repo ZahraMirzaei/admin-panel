@@ -1,0 +1,26 @@
+@use "../../../../scss/abstracts/" as *;
+
+.profile {
+  @include flex();
+  //   margin-left: auto;
+  &__avatar {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 0.5rem;
+
+    & img {
+      object-fit: cover;
+    }
+  }
+
+  &__userName {
+    font-size: $fontSizeBodyLarge;
+  }
+  &__role {
+    font-size: $fontSizeBodyMedium;
+    color: gray;
+  }
+}
