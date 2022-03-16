@@ -19,7 +19,6 @@ export const LangContextProvider: React.FC = (props) => {
   useEffect(() => {
     i18n.changeLanguage(lang);
   }, [lang]);
-
   function toggleLanguage(sLang: string) {
     setLang(sLang);
   }
