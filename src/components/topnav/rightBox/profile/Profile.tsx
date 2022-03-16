@@ -1,19 +1,9 @@
-import React, { useContext, useEffect } from "react";
 import { images } from "../../../../constants";
 import classes from "./Profile.module.scss";
 import { useTranslation } from "react-i18next";
-import i18n from "../../../../locale";
-import LangContext from "../../../../store/langContext";
 
 function Profile() {
-  const languageCtx = useContext(LangContext);
   const { t } = useTranslation();
-
-  const language = languageCtx.lang;
-
-  useEffect(() => {
-    i18n.changeLanguage(language!);
-  }, [language]);
 
   return (
     <div className={classes.profile}>
