@@ -44,27 +44,27 @@ const data = {
     body: [
       {
         username: "john doe",
-        order: "490",
+        order: 490,
         price: "$15,870",
       },
       {
         username: "frank iva",
-        order: "250",
+        order: 250,
         price: "$12,251",
       },
       {
         username: "anthony baker",
-        order: "120",
+        order: 120,
         price: "$10,840",
       },
       {
         username: "frank iva",
-        order: "110",
+        order: 110,
         price: "$9,251",
       },
       {
         username: "anthony baker",
-        order: "80",
+        order: 80,
         price: "$8,840",
       },
     ],
