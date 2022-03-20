@@ -1,5 +1,9 @@
 .chart {
+  margin-bottom: 4.5rem;
   &__wrapper {
+    display: flex;
+    overflow: auto;
     width: 100%;
+    min-width: 500px;
   }
 }

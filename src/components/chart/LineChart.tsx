@@ -24,8 +24,8 @@ export const options = {
   responsive: true,
   plugins: {
     legend: {
-      rtl: true,
-      textDirection: "rtl",
+      // rtl: true,
+      // textDirection: "rtl",
       labels: {
         font: {
           size: 20,
