@@ -6,6 +6,8 @@
   &__wrapper {
     @include flex();
     margin: 1rem 0;
+    flex: 1;
+    flex-wrap: wrap;
   }
 
   &__icon {
@@ -14,6 +16,7 @@
   &__info__amount {
     display: flex;
     margin-top: 0.3rem;
+    flex-wrap: wrap;
     & h4 {
       margin-top: 1rem;
       font-size: 32px;
