@@ -25,6 +25,7 @@ th {
   background-color: var(--primaryColor);
   color: var(--card-bgc);
   text-align: left;
+  white-space: wrap;
   &:first-child {
     border-top-left-radius: $largeBorderRadius;
   }
