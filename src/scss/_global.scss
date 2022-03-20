@@ -128,3 +128,16 @@ body {
   direction: rtl;
   text-align: right;
 }
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bgc);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primaryColor);
+  border-radius: 100vw;
+}
