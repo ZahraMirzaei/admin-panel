@@ -9,15 +9,12 @@ export type TlatestTransactions = {
   customer: string;
   totalPrice: string;
   date: string;
-  status: any;
+  status: string;
 };
 
 export interface Itable {
   limit?: number;
   headData: string[];
-  bodyData: string[];
-  renderBody: (
-    item: TtopCustomers | TlatestTransactions,
-    index: number
-  ) => void;
+  bodyData: TtopCustomers[];
+  renderBody: (item: TtopCustomers, index: number) => void;
 }
