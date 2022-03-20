@@ -1,0 +1,53 @@
+@use "../../../scss/abstracts/" as *;
+
+.container {
+  padding: 0 1.6rem 2rem;
+  // margin: 0 1rem;
+  // min-width: 400px;
+}
+
+.table__wrapper {
+  @include flex();
+  width: 100%;
+  min-width: 400px;
+  // overflow-x: auto;
+  flex: 1;
+  // align-items: stretch;
+}
+
+table {
+  width: 100%;
+  min-width: 300px;
+  border-spacing: 0;
+}
+
+th {
+  background-color: var(--primaryColor);
+  color: var(--card-bgc);
+  text-align: left;
+  &:first-child {
+    border-top-left-radius: $largeBorderRadius;
+  }
+  &:last-child {
+    border-top-right-radius: $largeBorderRadius;
+  }
+}
+
+th,
+td {
+  padding: 0.8rem 1rem;
+}
+
+html[dir="rtl"] {
+  th {
+    text-align: right;
+    &:first-child {
+      border-top-right-radius: $largeBorderRadius;
+      border-top-left-radius: 0;
+    }
+    &:last-child {
+      border-top-left-radius: $largeBorderRadius;
+      border-top-right-radius: 0;
+    }
+  }
+}
