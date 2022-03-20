@@ -1,0 +1,18 @@
+@use "../../scss/abstracts/" as *;
+
+.table {
+  @include flex(stretch, center);
+  flex-direction: column;
+  // flex-wrap: wrap;
+  margin: 3rem 0;
+  overflow: auto;
+}
+
+.table__title {
+  @include flex(center, space-between);
+
+  & a {
+    margin-bottom: 1rem;
+    color: rgb(0, 132, 255);
+  }
+}
