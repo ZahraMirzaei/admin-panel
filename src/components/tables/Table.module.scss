@@ -1,11 +1,15 @@
 @use "../../scss/abstracts/" as *;
 
 .table {
-  @include flex(stretch, center);
-  flex-direction: column;
-  // flex-wrap: wrap;
+  @include flex(stretch, flex-start);
+  flex-wrap: wrap;
   margin: 3rem 0;
-  overflow: auto;
+
+  &__top__customers {
+    flex: 1;
+    min-width: 320px;
+    padding: 0 1rem;
+  }
 }
 
 .table__title {
