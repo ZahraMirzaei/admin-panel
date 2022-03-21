@@ -1,17 +1,36 @@
-import React, { useState } from "react";
-import { Itable } from "../../../interfaces/Itable";
+import React from "react";
+import { Itable, complex } from "../../../interfaces/Itable";
 import Card from "../../UI/card/Card";
+import Badge from "../../UI/badge/Badge";
 import { useTranslation } from "react-i18next";
 import classes from "./CustomTable.module.scss";
 
 const CustomTable: React.FC<Itable> = (props) => {
-  const { t } = useTranslation();
-  const initDataShow =
-    props.limit && props.bodyData
-      ? props.bodyData.slice(0, Number(props.limit))
-      : props.bodyData;
+  function tableBody(item: complex, index: number) {
+    if ("username" in item) {
+      return (
+        <tr key={index}>
+          <td>{item.username}</td>
+          <td>{item.order}</td>
+          <td>{item.price}</td>
+        </tr>
+      );
+    } else if ("orderId" in item) {
+      return (
+        <tr key={index}>
+          <td>{item.orderId}</td>
+          <td>{item.customer}</td>
+          <td>{item.totalPrice}</td>
+          <td>{item.date}</td>
+          <td>
+            <Badge content={item.status} />
+          </td>
+        </tr>
+      );
+    }
+  }
 
-  const [dataShow, setDataShow] = useState(initDataShow);
+  const { t } = useTranslation();
 
   return (
     <div className={classes.container}>
@@ -27,11 +46,9 @@ const CustomTable: React.FC<Itable> = (props) => {
                 </tr>
               </thead>
             ) : null}
-            {props.bodyData && props.renderBody ? (
-              <tbody>
-                {dataShow.map((item, index) => props.renderBody(item, index))}
-              </tbody>
-            ) : null}
+            <tbody>
+              {props.bodyData.map((item, index) => tableBody(item, index))}
+            </tbody>
           </table>
         </div>
       </Card>
