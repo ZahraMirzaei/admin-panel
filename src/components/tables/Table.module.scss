@@ -9,6 +9,10 @@
     flex: 1;
     min-width: 320px;
     padding: 0 1rem;
+    @media screen and (max-width: 360px) {
+      min-width: 246px;
+      padding: 0;
+    }
   }
 }
 

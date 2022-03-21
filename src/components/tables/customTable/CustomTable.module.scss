@@ -2,17 +2,16 @@
 
 .container {
   padding: 0 1.6rem 2rem;
-  // margin: 0 1rem;
-  // min-width: 400px;
+  @media screen and (max-width: 360px) {
+    padding: 0 0 2rem;
+  }
 }
 
 .table__wrapper {
   @include flex();
   width: 100%;
   min-width: 400px;
-  // overflow-x: auto;
   flex: 1;
-  // align-items: stretch;
 }
 
 table {
