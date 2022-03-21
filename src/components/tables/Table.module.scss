@@ -4,14 +4,29 @@
   @include flex(stretch, flex-start);
   flex-wrap: wrap;
   margin: 3rem 0;
+  font-size: 14px;
 
-  &__top__customers {
-    flex: 1;
-    min-width: 320px;
+  &__child {
     padding: 0 1rem;
-    @media screen and (max-width: 360px) {
+  }
+  &__top__customers {
+    min-width: 550px;
+    flex: 2;
+    @media screen and (max-width: 1024px) {
+      min-width: 400px;
+    }
+    @media screen and (max-width: 425px) {
       min-width: 246px;
-      padding: 0;
+    }
+  }
+  &__latest__orders {
+    min-width: 650px;
+    flex: 3;
+    @media screen and (max-width: 1024px) {
+      min-width: 400px;
+    }
+    @media screen and (max-width: 425px) {
+      min-width: 246px;
     }
   }
 }

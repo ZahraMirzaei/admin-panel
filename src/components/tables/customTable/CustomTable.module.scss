@@ -1,7 +1,8 @@
 @use "../../../scss/abstracts/" as *;
 
 .container {
-  padding: 0 1.6rem 2rem;
+  padding: 0 1rem 2rem;
+  // margin: 0 -1rem;
   @media screen and (max-width: 360px) {
     padding: 0 0 2rem;
   }
@@ -12,6 +13,7 @@
   width: 100%;
   min-width: 400px;
   flex: 1;
+  margin: 0 -1rem;
 }
 
 table {
@@ -31,6 +33,10 @@ th {
   &:last-child {
     border-top-right-radius: $largeBorderRadius;
   }
+}
+
+tr:nth-child(odd) {
+  background-color: var(--card-bgc);
 }
 
 th,
