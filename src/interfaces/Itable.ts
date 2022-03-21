@@ -1,8 +1,8 @@
-export type TtopCustomers = {
+export interface TtopCustomers extends Object {
   username: string;
   order: number;
   price: string;
-};
+}
 
 export type TlatestTransactions = {
   orderId: string;
@@ -12,9 +12,10 @@ export type TlatestTransactions = {
   status: string;
 };
 
+export type complex = TtopCustomers | TlatestTransactions;
+
 export interface Itable {
   limit?: number;
   headData: string[];
-  bodyData: TtopCustomers[];
-  renderBody: (item: TtopCustomers, index: number) => void;
+  bodyData: TtopCustomers[] | TlatestTransactions[];
 }
