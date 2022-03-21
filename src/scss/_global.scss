@@ -103,20 +103,22 @@ body {
   display: inline-block;
   padding: 4px 10px;
   text-align: center;
-  font-size: 9px;
+  font-size: 10px;
   border-radius: $largeBorderRadius;
-  .approved {
-    background-color: var(--approved-bgc);
-    color: var(--approved-textColor);
-  }
-  .pending {
-    background-color: var(--pending-bgc);
-    color: var(--pending-textColor);
-  }
-  .rejected {
-    background-color: var(--rejected-bgc);
-    color: var(--rejected-textColor);
-  }
+}
+.approved {
+  background-color: var(--approved-bgc);
+  color: var(--approved-textColor);
+}
+
+.pending {
+  background-color: var(--pending-bgc);
+  color: var(--pending-textColor);
+}
+
+.rejected {
+  background-color: var(--rejected-bgc);
+  color: var(--rejected-textColor);
 }
 
 .ltr {
