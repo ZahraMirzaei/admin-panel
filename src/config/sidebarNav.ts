@@ -6,12 +6,6 @@ const sidebarNav = [
     text: "Dashboard",
   },
   {
-    link: "/orders",
-    section: "orders",
-    icon: "icon-park-outline:transaction-order",
-    text: "Orders",
-  },
-  {
     link: "/products",
     section: "products",
     icon: "icon-park-outline:ad-product",
@@ -22,6 +16,12 @@ const sidebarNav = [
     section: "customers",
     icon: "ph:users-bold",
     text: "Customers",
+  },
+  {
+    link: "/orders",
+    section: "orders",
+    icon: "icon-park-outline:transaction-order",
+    text: "Orders",
   },
   {
     link: "/analytics",
