@@ -9,7 +9,7 @@
 }
 
 .table__wrapper {
-  @include flex();
+  @include flex(center, flex-start);
   width: 100%;
   min-width: 400px;
   flex: 1;
@@ -42,11 +42,59 @@ tr:nth-child(odd) {
 th,
 td {
   padding: 0.8rem 1rem;
+  white-space: nowrap;
+}
+
+.actions {
+  width: 20px;
+  text-align: center;
+  position: relative;
+  &__box {
+    // display: none;
+    @include flex(center, space-between);
+    position: absolute;
+    top: 20%;
+    right: 53%;
+    background-color: var(--bgc);
+    box-shadow: $mainBoxShadow;
+    border-radius: $smallBorderRadius;
+    width: 100px;
+    padding: 0.4rem 1.2rem 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: all 0.3s ease-in-out;
+
+    & svg {
+      transition: all 0.1s ease-in-out;
+
+      &:hover,
+      &:active,
+      &:visited {
+        -webkit-filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.3));
+        filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.3));
+      }
+    }
+  }
+
+  &:hover &__box,
+  &:active &__box {
+    transform: scaleX(1);
+  }
+
+  &__edit {
+    color: var(--approved-textColor);
+    cursor: pointer;
+  }
+
+  &__delete {
+    color: var(--rejected-textColor);
+    cursor: pointer;
+  }
 }
 
 html[dir="rtl"] {
   th {
-    text-align: right;
+    text-align: center;
     &:first-child {
       border-top-right-radius: $largeBorderRadius;
       border-top-left-radius: 0;
@@ -55,5 +103,10 @@ html[dir="rtl"] {
       border-top-left-radius: $largeBorderRadius;
       border-top-right-radius: 0;
     }
+  }
+  .actions__box {
+    right: auto;
+    left: 53%;
+    transform-origin: left;
   }
 }
