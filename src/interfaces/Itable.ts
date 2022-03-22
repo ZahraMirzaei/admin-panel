@@ -1,4 +1,4 @@
-export interface TtopCustomers extends Object {
+export interface ItopCustomers extends Object {
   username: string;
   order: number;
   price: string;
@@ -12,10 +12,19 @@ export type TlatestTransactions = {
   status: string;
 };
 
-export type complex = TtopCustomers | TlatestTransactions;
+export interface IcustomersTable {
+  ID: number;
+  userName: string;
+  email: string;
+  phoneNumber: string;
+  totalOrders: number;
+  totalSpend: string;
+  location: string;
+}
 
+export type complex = ItopCustomers | TlatestTransactions | IcustomersTable;
 export interface Itable {
   limit?: number;
   headData: string[];
-  bodyData: TtopCustomers[] | TlatestTransactions[];
+  bodyData: ItopCustomers[] | TlatestTransactions[] | IcustomersTable[];
 }
