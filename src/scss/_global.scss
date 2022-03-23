@@ -131,6 +131,10 @@ body {
   text-align: right;
 }
 
+.error {
+  color: var(--rejected-textColor);
+}
+
 ::-webkit-scrollbar {
   width: 1rem;
 }
