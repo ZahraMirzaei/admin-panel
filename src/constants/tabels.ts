@@ -11,12 +11,12 @@ export const customersHeader = [
 export const customers = [
   {
     ID: 1,
-    userName: "John Smith",
-    email: "john_smith@gmail.com",
+    userName: "Zahra Mirzaei",
+    email: "zahra_mirzaei@gmail.com",
     phoneNumber: "+98 918 123 45 67",
     totalOrders: 804,
     totalSpend: "$120.00",
-    location: "USA",
+    location: "UK",
   },
   {
     ID: 2,
