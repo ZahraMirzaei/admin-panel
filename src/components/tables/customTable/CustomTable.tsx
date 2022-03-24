@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Itable, complex } from "../../../interfaces/Itable";
 import Card from "../../UI/card/Card";
 import Badge from "../../UI/badge/Badge";
+import Modal from "../../UI/modal/Modal";
 import { useTranslation } from "react-i18next";
 import { Icon } from "@iconify/react";
 import classes from "./CustomTable.module.scss";
 
 const CustomTable: React.FC<Itable> = (props) => {
+  const [showModal, setShowModal] = useState(false);
+  function showModalHandler() {
+    setShowModal((prev) => !prev);
+  }
   function tableBody(item: complex, index: number) {
     if ("username" in item) {
       return (
@@ -43,11 +48,14 @@ const CustomTable: React.FC<Itable> = (props) => {
             <Icon icon="charm:menu-kebab" />
             <div className={classes.actions__box}>
               <div className={classes.actions__edit}>
-                <Link to="/">
+                <Link to={`/customers/${item.ID}`}>
                   <Icon icon="fluent:edit-16-regular" width="24" />
                 </Link>
               </div>
-              <div className={classes.actions__delete}>
+              <div
+                className={classes.actions__delete}
+                onClick={showModalHandler}
+              >
                 <Icon icon="fluent:delete-24-regular" width="24" />
               </div>
             </div>
@@ -60,26 +68,35 @@ const CustomTable: React.FC<Itable> = (props) => {
   const { t } = useTranslation();
 
   return (
-    <div className={classes.container}>
-      <Card>
-        <div className={classes.table__wrapper}>
-          <table>
-            {props.headData ? (
-              <thead>
-                <tr>
-                  {props.headData.map((item, index) => (
-                    <th key={index}>{t(item)}</th>
-                  ))}
-                </tr>
-              </thead>
-            ) : null}
-            <tbody>
-              {props.bodyData.map((item, index) => tableBody(item, index))}
-            </tbody>
-          </table>
-        </div>
-      </Card>
-    </div>
+    <>
+      {showModal ? (
+        <Modal
+          title={t("deleteCustomer")}
+          message={`${t("modalMessage")}`}
+          onConfirm={showModalHandler}
+        />
+      ) : null}
+      <div className={classes.container}>
+        <Card>
+          <div className={classes.table__wrapper}>
+            <table>
+              {props.headData ? (
+                <thead>
+                  <tr>
+                    {props.headData.map((item, index) => (
+                      <th key={index}>{t(item)}</th>
+                    ))}
+                  </tr>
+                </thead>
+              ) : null}
+              <tbody>
+                {props.bodyData.map((item, index) => tableBody(item, index))}
+              </tbody>
+            </table>
+          </div>
+        </Card>
+      </div>
+    </>
   );
 };
 
