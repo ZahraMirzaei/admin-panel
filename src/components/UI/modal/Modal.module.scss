@@ -1,0 +1,69 @@
+@use "../../../scss/abstracts/index" as *;
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+  position: fixed;
+  top: 30vh;
+  left: 10%;
+  width: 70%;
+  z-index: 100;
+  overflow: hidden;
+  border-radius: $largeBorderRadius;
+  background-color: var(--bgc);
+}
+
+.header {
+  background: var(--primaryColor);
+  padding: 1rem;
+}
+
+.header h3 {
+  margin: 0;
+  color: white;
+}
+
+.content {
+  padding: 1rem;
+}
+
+.actions {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+
+  .delete {
+    font: inherit;
+    border-radius: $smallBorderRadius;
+    padding: 0.8rem 3rem;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    background-color: var(--rejected-textColor);
+    border: none;
+    color: gainsboro;
+
+    &:hover,
+    &:active {
+      background-color: darken(#9d0e0e, 10%);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    left: calc(50% - 20rem);
+    width: 40rem;
+  }
+}
