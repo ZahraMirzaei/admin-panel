@@ -13,7 +13,7 @@ export type TlatestTransactions = {
 };
 
 export interface IcustomersTable {
-  ID: number;
+  ID: number | string;
   userName: string;
   email: string;
   phoneNumber: string;
