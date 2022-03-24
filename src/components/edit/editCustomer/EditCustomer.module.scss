@@ -1,0 +1,93 @@
+@use "../../../scss/abstracts/" as *;
+
+.edit__container {
+  @include flex();
+  flex-wrap: wrap;
+}
+
+.edit__left,
+.edit__right {
+  flex: 1;
+  min-width: 400px;
+  max-width: 600px;
+  @media screen and (max-width: 1210px) {
+    margin-top: 2rem;
+  }
+  @media screen and (max-width: 330px) {
+    min-width: 200px;
+  }
+}
+.account {
+  @include flex(baseline, center);
+  flex-direction: column;
+  margin: 3rem;
+  @media screen and (max-width: 1250px) {
+    margin: 3rem 0.5rem;
+  }
+  &__info {
+    color: lightslategray;
+    margin-bottom: 2rem;
+
+    & > div {
+      @include flex(center, flex-start);
+      color: var(--text-color);
+      margin: 0.5rem 1rem;
+
+      & > div {
+        margin: 0.5rem 1rem;
+      }
+    }
+  }
+
+  &__contact__email svg {
+    margin: 0 0.2rem;
+  }
+
+  .subTitle {
+    @include flex();
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 4rem;
+  }
+
+  .form__control {
+    position: relative;
+    margin-bottom: 2rem;
+    // border: 1px solid red;
+    label {
+      position: absolute;
+      top: -30%;
+      left: 10px;
+      background-color: var(--bgc);
+      padding: 0.3rem;
+    }
+
+    input {
+      padding: 1rem 1.5rem;
+      border: 1px solid gainsboro;
+      outline: gray;
+      background-color: var(--bgc);
+      border-radius: $smallBorderRadius;
+      min-width: 300px;
+    }
+
+    .btn {
+      padding: 0.8rem 3rem;
+      border: none;
+      border-radius: $smallBorderRadius;
+      background-color: var(--secondaryColor);
+      color: gainsboro;
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+}
+
+html[dir="rtl"] {
+  .form__control {
+    label {
+      left: auto;
+      right: 10px;
+    }
+  }
+}
