@@ -10,7 +10,7 @@ export const customersHeader = [
 ];
 export const customers = [
   {
-    ID: 1,
+    ID: 0,
     userName: "Zahra Mirzaei",
     email: "zahra_mirzaei@gmail.com",
     phoneNumber: "+98 918 123 45 67",
@@ -19,16 +19,16 @@ export const customers = [
     location: "UK",
   },
   {
-    ID: 2,
+    ID: 1,
     userName: "John Smith",
     email: "john_smith@gmail.com",
     phoneNumber: "+98 918 123 45 67",
     totalOrders: 230,
     totalSpend: "$120.00",
-    location: "USA",
+    location: "UK",
   },
   {
-    ID: 3,
+    ID: 2,
     userName: "John Smith",
     email: "john_smith@gmail.com",
     phoneNumber: "+98 918 123 45 67",
@@ -37,7 +37,7 @@ export const customers = [
     location: "USA",
   },
   {
-    ID: 4,
+    ID: 3,
     userName: "John Smith",
     email: "john_smith@gmail.com",
     phoneNumber: "+98 918 123 45 67",
@@ -46,7 +46,7 @@ export const customers = [
     location: "USA",
   },
   {
-    ID: 5,
+    ID: 4,
     userName: "John Smith",
     email: "john_smith@gmail.com",
     phoneNumber: "+98 918 123 45 67",
@@ -55,7 +55,7 @@ export const customers = [
     location: "USA",
   },
   {
-    ID: 6,
+    ID: 5,
     userName: "John Smith",
     email: "john_smith@gmail.com",
     phoneNumber: "+98 918 123 45 67",
@@ -64,7 +64,7 @@ export const customers = [
     location: "USA",
   },
   {
-    ID: 7,
+    ID: 6,
     userName: "John Smith",
     email: "john_smith@gmail.com",
     phoneNumber: "+98 918 123 45 67",
@@ -73,7 +73,7 @@ export const customers = [
     location: "USA",
   },
   {
-    ID: 8,
+    ID: 7,
     userName: "John Smith",
     email: "john_smith@gmail.com",
     phoneNumber: "+98 918 123 45 67",
@@ -82,7 +82,7 @@ export const customers = [
     location: "USA",
   },
   {
-    ID: 9,
+    ID: 8,
     userName: "John Smith",
     email: "john_smith@gmail.com",
     phoneNumber: "+98 918 123 45 67",
@@ -91,7 +91,7 @@ export const customers = [
     location: "USA",
   },
   {
-    ID: 10,
+    ID: 9,
     userName: "John Smith",
     email: "john_smith@gmail.com",
     phoneNumber: "+98 918 123 45 67",
