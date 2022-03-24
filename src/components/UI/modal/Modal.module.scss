@@ -1,4 +1,4 @@
-@use "../../../scss/abstracts/index" as *;
+@use "../../../scss/abstracts/" as *;
 
 .backdrop {
   position: fixed;
@@ -13,10 +13,12 @@
 .modal {
   position: fixed;
   top: 30vh;
-  left: 10%;
-  width: 70%;
+  left: 30%;
+  width: 50%;
+  min-width: 500px;
+  max-width: 700px;
   z-index: 100;
-  overflow: hidden;
+  overflow: auto;
   border-radius: $largeBorderRadius;
   background-color: var(--bgc);
 }
@@ -61,9 +63,13 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
+  .backdrop {
+    z-index: 1000;
+  }
   .modal {
-    left: calc(50% - 20rem);
-    width: 40rem;
+    left: calc(50% - 15rem);
+    width: 30rem;
+    z-index: 1000;
   }
 }
