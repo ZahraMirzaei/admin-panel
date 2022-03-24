@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "../../UI/card/Card";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import classes from "./EditCustomer.module.scss";
 import { IcustomersTable } from "../../../interfaces/Itable";
@@ -77,7 +78,9 @@ const EditCustomer: React.FC<{ customer?: IcustomersTable }> = (props) => {
                 />
               </div>
               <div className={classes.form__control}>
-                <Button type="submit">{t("upload")}</Button>
+                <Link to="/customers">
+                  <Button type="submit">{t("upload")}</Button>
+                </Link>
               </div>
             </form>
           </div>
