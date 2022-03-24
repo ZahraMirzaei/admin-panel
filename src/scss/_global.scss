@@ -147,3 +147,7 @@ body {
   background-color: var(--secondaryColor);
   border-radius: 100vw;
 }
+
+#overlay-root > div {
+  padding: 0;
+}
