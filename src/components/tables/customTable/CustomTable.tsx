@@ -47,16 +47,16 @@ const CustomTable: React.FC<Itable> = (props) => {
           <td className={classes.actions}>
             <Icon icon="charm:menu-kebab" />
             <div className={classes.actions__box}>
-              <div className={classes.actions__edit}>
-                <Link to={`/customers/${item.ID}`}>
-                  <Icon icon="fluent:edit-16-regular" width="24" />
-                </Link>
-              </div>
               <div
                 className={classes.actions__delete}
                 onClick={showModalHandler}
               >
                 <Icon icon="fluent:delete-24-regular" width="24" />
+              </div>
+              <div className={classes.actions__edit}>
+                <Link to={`/customers/${item.ID}`}>
+                  <Icon icon="fluent:edit-16-regular" width="24" />
+                </Link>
               </div>
             </div>
           </td>
