@@ -41,7 +41,6 @@ function useFetch<T = unknown>(url?: string, options?: RequestInit): State<T> {
   };
 
   const [state, dispatch] = useReducer(fetchReducer, initialState);
-
   useEffect(() => {
     // Do nothing if the url is not given
     if (!url) return;
@@ -59,6 +58,10 @@ function useFetch<T = unknown>(url?: string, options?: RequestInit): State<T> {
         const response = await fetch(url, options);
         if (!response.ok) {
           throw new Error(response.statusText);
+        }
+        if (response.ok && response.status !== 200) {
+          console.log(response.status);
+          throw new Error("302 error happen. Maybe you forgat .json");
         }
 
         const data = (await response.json()) as T;
