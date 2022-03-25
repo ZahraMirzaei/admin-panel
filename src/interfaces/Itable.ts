@@ -22,9 +22,26 @@ export interface IcustomersTable {
   location: string;
 }
 
-export type complex = ItopCustomers | TlatestTransactions | IcustomersTable;
+export interface IProductsTable {
+  ID: number | string;
+  product: string;
+  inventory: number;
+  price: string;
+  category: string;
+}
+
+export type complex =
+  | ItopCustomers
+  | TlatestTransactions
+  | IcustomersTable
+  | IProductsTable;
+
 export interface Itable {
   limit?: number;
   headData: string[];
-  bodyData: ItopCustomers[] | TlatestTransactions[] | IcustomersTable[];
+  bodyData:
+    | ItopCustomers[]
+    | TlatestTransactions[]
+    | IcustomersTable[]
+    | IProductsTable[];
 }

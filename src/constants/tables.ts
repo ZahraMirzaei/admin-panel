@@ -4,9 +4,9 @@ export const customersHeader = [
   "email",
   "phoneNumber",
   "totalOrders",
-  "totalSpend",
+  "totalSpending",
   "location",
-  "Actions",
+  "actions",
 ];
 export const customers = [
   {
@@ -116,6 +116,7 @@ export const productsHeader = [
   "inventory",
   "price",
   "category",
+  "actions",
 ];
 export const products = [
   {
