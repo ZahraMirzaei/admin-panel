@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import classes from "./Table.module.scss";
+import classes from "./DashboardTables.module.scss";
 import { useTranslation } from "react-i18next";
 import CustomTable from "./customTable/CustomTable";
 import data from "../../constants/data";
@@ -24,7 +24,7 @@ const Table = () => {
         className={`${classes.table__latest__orders} ${classes.table__child}`}
       >
         <div className={classes.table__title}>
-          <p className="subTitle">{t("topCustomers")}</p>
+          <p className="subTitle">{t("latestTransaction")}</p>
           <Link to="/">{t("viewAll")}</Link>
         </div>
         <CustomTable
