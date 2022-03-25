@@ -12,9 +12,12 @@ function CustomerEdit() {
   const { t } = useTranslation();
   const params = useParams();
   let { customerId } = params;
+
+  /* fallback in case of time limit to test firebase database will over */
   let customerInfo: IcustomersTable = customers.filter(
     (item) => item.ID.toString() === customerId
   )[0];
+
   let customerEdit;
 
   const { data, error, status } = useFetch<IcustomersTable>(
