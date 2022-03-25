@@ -1,0 +1,12 @@
+@use "../../../scss/abstracts/" as *;
+
+.select {
+  padding: 0.8rem 0.5rem 0.8rem 1rem;
+  margin: 0 0.8rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: $smallBorderRadius;
+  outline: none;
+  border: none;
+  border-right: 1rem solid transparent;
+  cursor: pointer;
+}
