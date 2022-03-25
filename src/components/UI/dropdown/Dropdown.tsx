@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import classes from "./Dropdown.module.scss";
 
@@ -12,7 +12,7 @@ interface IDropdown {
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 const Dropdown: React.FC<IDropdown> = (props) => {
-  const selectRef = useRef<HTMLSelectElement | null>(null);
+  //   const selectRef = useRef<HTMLSelectElement | null>(null);
 
   const { t } = useTranslation();
 
@@ -23,7 +23,6 @@ const Dropdown: React.FC<IDropdown> = (props) => {
         name="category"
         className={classes.select}
         id="category"
-        ref={selectRef}
         onChange={props.onChange}
       >
         {props.dropdownData.map((item, index) => (
