@@ -66,6 +66,33 @@ const CustomTable: React.FC<Itable> = (props) => {
           </td>
         </tr>
       );
+    } else if ("category" in item) {
+      //for implementing customers table
+      return (
+        <tr key={index}>
+          <td>{item.ID}</td>
+          <td>{item.product}</td>
+          <td>{item.inventory}</td>
+          <td>{item.price}</td>
+          <td>{item.category}</td>
+          <td className={classes.actions}>
+            <Icon icon="charm:menu-kebab" />
+            <div className={classes.actions__box}>
+              <div
+                className={classes.actions__delete}
+                onClick={showModalHandler}
+              >
+                <Icon icon="fluent:delete-24-regular" width="24" />
+              </div>
+              <div className={classes.actions__edit}>
+                <Link to={`/products/${item.ID}`}>
+                  <Icon icon="fluent:edit-16-regular" width="24" />
+                </Link>
+              </div>
+            </div>
+          </td>
+        </tr>
+      );
     }
   }
 
@@ -92,7 +119,7 @@ const CustomTable: React.FC<Itable> = (props) => {
     const start = Number(props.limit) * page;
     const end = start + Number(props.limit);
 
-    setDataShow(props.bodyData.slice(start, end));
+    setDataShow(props.bodyData?.slice(start, end));
 
     setCurrPage(page);
   };
