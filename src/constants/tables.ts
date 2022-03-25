@@ -109,3 +109,97 @@ export const customers = [
     location: "UK",
   },
 ];
+
+export const productsHeader = [
+  "ID",
+  "product",
+  "inventory",
+  "price",
+  "category",
+];
+export const products = [
+  {
+    ID: 0,
+    product: "Apple AirPods",
+    inventory: 30,
+    price: "$200.00",
+    category: "digital",
+  },
+  {
+    ID: 1,
+    product: "NUBWO G06",
+    inventory: 28,
+    price: "$120.00",
+    category: "digital",
+  },
+  {
+    ID: 2,
+    product: "Hooded Sweatshirt",
+    inventory: 10,
+    price: "$10.00",
+    category: "clothing",
+  },
+  {
+    ID: 3,
+    product: "Keyboard",
+    inventory: 50,
+    price: "$50.00",
+    category: "digital",
+  },
+  {
+    ID: 4,
+    product: "T-Shirt",
+    inventory: 20,
+    price: "$75.00",
+    category: "clothing",
+  },
+  {
+    ID: 5,
+    product: "LED Monitor",
+    inventory: 31,
+    price: "$510.00",
+    category: "digital",
+  },
+  {
+    ID: 6,
+    product: "Socks",
+    inventory: 5,
+    price: "$10.00",
+    category: "clothing",
+  },
+  {
+    ID: 7,
+    product: "Mouse",
+    inventory: 3,
+    price: "$16.00",
+    category: "digital",
+  },
+  {
+    ID: 8,
+    product: "Mielle",
+    inventory: 36,
+    price: "$170.00",
+    category: "beauty",
+  },
+  {
+    ID: 9,
+    product: "hat cap",
+    inventory: 17,
+    price: "$25.00",
+    category: "clothing",
+  },
+  {
+    ID: 10,
+    product: "CeraVe",
+    inventory: 7,
+    price: "$220.00",
+    category: "beauty",
+  },
+  {
+    ID: 11,
+    product: "Neutrogena",
+    inventory: 30,
+    price: "$205.00",
+    category: "beauty",
+  },
+];
