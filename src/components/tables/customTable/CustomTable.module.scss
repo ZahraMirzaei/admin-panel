@@ -8,6 +8,12 @@
   }
 }
 
+.wrapper {
+  @include flex();
+  flex-direction: column;
+  flex: 1;
+}
+
 .table__wrapper {
   @include flex(center, flex-start);
   width: 100%;
@@ -16,10 +22,14 @@
   margin: 0 -1rem;
 }
 
-table {
+.table {
   width: 100%;
   min-width: 300px;
   border-spacing: 0;
+}
+
+.largeTable {
+  min-width: 1100px;
 }
 
 th {
@@ -89,6 +99,37 @@ td {
   &__delete {
     color: var(--rejected-textColor);
     cursor: pointer;
+  }
+}
+
+.table__pagination {
+  @include flex(center, flex-end);
+  width: 100%;
+  margin-top: 20px;
+
+  &_item ~ &_item {
+    margin-left: 10px;
+  }
+
+  &_item {
+    @include flex();
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &_item.active,
+  &_item.active:hover {
+    background-color: var(--primaryColor);
+    color: #ebebeb;
+    font-weight: 600;
+  }
+
+  &_item:hover {
+    color: var(--primaryColor);
+    font-weight: 600;
   }
 }
 
