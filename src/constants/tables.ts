@@ -29,8 +29,8 @@ export const customers = [
   },
   {
     ID: 2,
-    userName: "John Smith",
-    email: "john_smith@gmail.com",
+    userName: "Kyle Simpson",
+    email: "Kyle_simpson@gmail.com",
     phoneNumber: "+98 918 123 45 67",
     totalOrders: 120,
     totalSpend: "$120.00",
@@ -38,7 +38,7 @@ export const customers = [
   },
   {
     ID: 3,
-    userName: "John Smith",
+    userName: "	Maximilian Doe",
     email: "john_smith@gmail.com",
     phoneNumber: "+98 918 123 45 67",
     totalOrders: 15,
@@ -74,7 +74,7 @@ export const customers = [
   },
   {
     ID: 7,
-    userName: "John Smith",
+    userName: "Andrei Neagoie",
     email: "john_smith@gmail.com",
     phoneNumber: "+98 918 123 45 67",
     totalOrders: 803,
@@ -98,5 +98,14 @@ export const customers = [
     totalOrders: 804,
     totalSpend: "$120.00",
     location: "USA",
+  },
+  {
+    ID: 10,
+    userName: "Jason Bourne",
+    email: "test@gmail.com",
+    phoneNumber: "+98 918 123 45 67",
+    totalOrders: 460,
+    totalSpend: "$260.00",
+    location: "UK",
   },
 ];
