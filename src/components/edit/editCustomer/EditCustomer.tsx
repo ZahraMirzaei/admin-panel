@@ -54,11 +54,16 @@ const EditCustomer: React.FC<{ customer?: IcustomersTable }> = (props) => {
             >
               <div className={classes.form__control}>
                 <label htmlFor="userName">{t("userName")}</label>
-                <input type="text" placeholder={props.customer?.userName} />
+                <input
+                  id="userName"
+                  type="text"
+                  placeholder={props.customer?.userName}
+                />
               </div>
               <div className={classes.form__control}>
                 <label htmlFor="phoneNumber">{t("phoneNumber")}</label>
                 <input
+                  id="phoneNumber"
                   minLength={7}
                   maxLength={12}
                   type="tel"
@@ -67,11 +72,16 @@ const EditCustomer: React.FC<{ customer?: IcustomersTable }> = (props) => {
               </div>
               <div className={classes.form__control}>
                 <label htmlFor="email">{t("email")}</label>
-                <input type="email" placeholder={props.customer?.email} />
+                <input
+                  id="email"
+                  type="email"
+                  placeholder={props.customer?.email}
+                />
               </div>
               <div className={classes.form__control}>
                 <label htmlFor="address">{t("address")}</label>
                 <input
+                  id="address"
                   minLength={10}
                   type="text"
                   placeholder={props.customer?.location}
