@@ -17,7 +17,7 @@ const MainLayout = () => {
         <div
           className={`${classes.main__content} ${
             !sidebarCtx.isOpen && classes.close_sidebar
-          }`}
+          } main_wrapper`}
         >
           <TopNav />
           <Outlet />

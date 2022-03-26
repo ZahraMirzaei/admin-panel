@@ -137,8 +137,35 @@ body {
   color: var(--rejected-textColor);
 }
 
+@include tablet {
+  .sidebar__open .main_wrapper {
+    height: 100vh;
+    overflow: hidden;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    transform: scale(0.9) translateX(45%);
+    transition: all 0.5s ease-in-out;
+    box-shadow: $secondBoxShadow;
+  }
+}
+
+.main_wrapper {
+  transform: scale(1) translateX(0);
+  // transition: all 0.5s ease-in-out;
+}
+
+html[dir="rtl"] {
+  @include tablet {
+    .sidebar__open .main_wrapper {
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+      transform: scale(0.9) translateX(-45%);
+    }
+  }
+}
+
 ::-webkit-scrollbar {
-  width: 1rem;
+  width: 0.5rem;
 }
 
 ::-webkit-scrollbar-track {
