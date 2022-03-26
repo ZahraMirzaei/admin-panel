@@ -132,7 +132,7 @@ i18n
           location: "موقعیت مکان",
           actions: "عملیات",
           deleteCustomer: "حذف مشتری",
-          modalMessage: "آیا درباره حذف این کاربر مطمئن هستید؟",
+          modalMessage: "آیا درباره حذف   مطمئن هستید؟",
           delete: "حذف",
           cancel: "صرف‌نظر",
           category: "دسته بندی",
