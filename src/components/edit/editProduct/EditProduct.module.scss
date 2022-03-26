@@ -28,7 +28,7 @@
 .product__info {
   @include flex();
   flex-direction: column;
-  margin: 3rem;
+  margin: 3rem 0;
   flex: 1;
   //   margin-bottom: 2rem;
 
@@ -69,10 +69,12 @@
 //   }
 
 .subTitle {
-  @include flex();
+  @include flex(center, flex-start);
   font-size: 22px;
   font-weight: 400;
   margin-bottom: 4rem;
+  width: 100%;
+  text-align: initial;
 }
 
 .form__control {
