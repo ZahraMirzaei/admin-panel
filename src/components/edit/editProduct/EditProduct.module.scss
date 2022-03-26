@@ -1,0 +1,132 @@
+@use "../../../scss/abstracts/" as *;
+
+.edit__container {
+  @include flex();
+  flex-wrap: wrap;
+}
+
+.edit__left,
+.edit__right {
+  flex: 1;
+  min-width: 400px;
+  max-width: 600px;
+  @media screen and (max-width: 1210px) {
+    margin-top: 2rem;
+  }
+  @media screen and (max-width: 330px) {
+    min-width: 200px;
+  }
+}
+
+// .product {
+//   @include flex(baseline, center);
+//   flex-direction: column;
+//   margin: 3rem;
+//   @media screen and (max-width: 1250px) {
+//     margin: 3rem 0.5rem;
+//   }
+.product__info {
+  @include flex();
+  flex-direction: column;
+  margin: 3rem;
+  flex: 1;
+  //   margin-bottom: 2rem;
+
+  & > div {
+    // @include flex();
+    // color: var(--text-color);
+    margin: 1rem;
+    width: 100%;
+    & > div {
+      display: inline-block;
+      width: 45%;
+      @media screen and (max-width: 810px) {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+.title {
+  color: gray;
+  text-align: right;
+  @media screen and (max-width: 810px) {
+    text-align: center;
+    white-space: nowrap;
+  }
+}
+.value {
+  margin-left: 2rem;
+  @media screen and (max-width: 810px) {
+    margin-left: 0;
+    margin-top: 0.7rem;
+    white-space: nowrap;
+  }
+}
+
+//   &__contact__email svg {
+//     margin: 0 0.2rem;
+//   }
+
+.subTitle {
+  @include flex();
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 4rem;
+}
+
+.form__control {
+  position: relative;
+  margin-bottom: 2rem;
+  // border: 1px solid red;
+  label {
+    position: absolute;
+    top: -30%;
+    left: 10px;
+    background-color: var(--bgc);
+    padding: 0.3rem;
+  }
+
+  input {
+    padding: 1rem 1.5rem;
+    border: 1px solid gainsboro;
+    outline: gray;
+    background-color: var(--bgc);
+    border-radius: $smallBorderRadius;
+    min-width: 300px;
+  }
+
+  .btn {
+    padding: 0.8rem 3rem;
+    border: none;
+    border-radius: $smallBorderRadius;
+    background-color: var(--secondaryColor);
+    color: gainsboro;
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+// }
+
+html[dir="rtl"] {
+  .form__control {
+    label {
+      left: auto;
+      right: 10px;
+    }
+  }
+
+  .title {
+    text-align: left;
+    @media screen and (max-width: 810px) {
+      text-align: center;
+    }
+  }
+  .value {
+    margin-left: 0;
+    margin-right: 2rem;
+    @media screen and (max-width: 810px) {
+      margin-right: 0;
+    }
+  }
+}
