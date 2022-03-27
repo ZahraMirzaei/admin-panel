@@ -11,9 +11,10 @@
   height: 100vh;
   position: fixed;
   top: 0;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
   z-index: 200;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 
   &.sidebar_close {
     width: 50px;
@@ -42,7 +43,7 @@
     }
 
     @include tablet {
-      padding-top: 5rem;
+      padding-top: 1rem;
     }
     @include mobile {
       padding-top: 0.5rem;
