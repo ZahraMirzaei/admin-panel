@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Customers from "./pages/Customers";
@@ -9,14 +9,15 @@ import NotFound from "./pages/NotFound";
 import BlankPage from "./pages/BlankPage";
 import Login from "./pages/Login";
 import MainLayout from "./layout/MainLayout";
+import LoginContext from "./store/loginContext";
 
 import "./scss/App.scss";
 function App() {
-  const [isLogin, setIsLogin] = useState(true);
+  const loginCtx = useContext(LoginContext);
   return (
     <BrowserRouter>
       <Routes>
-        {!isLogin ? (
+        {!loginCtx.isLogin ? (
           <Route path="/" element={<Login />} />
         ) : (
           <Route path="/" element={<MainLayout />}>
