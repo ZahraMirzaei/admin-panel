@@ -147,7 +147,7 @@ i18n
           proName: "نام محصول",
           inventoryCount: "شمارش موجودی",
           loginPage: "به حساب کاربری خود وارد شوید",
-          forgetPass: "رمز عبورتان را فراموش کرده‌اید",
+          forgetPass: "رمز عبورتان را فراموش کرده‌اید؟",
           rememberMe: "مرا به خاطر بسپار",
           salesAmount: "۲۴,۰۰۰,۰۰۰",
           orderAmount: "۳۰۰۰",
