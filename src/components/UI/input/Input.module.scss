@@ -1,0 +1,31 @@
+@use "../../../scss/abstracts/" as *;
+.form__control {
+  position: relative;
+  margin-bottom: 2rem;
+  // border: 1px solid red;
+  label {
+    position: absolute;
+    top: -30%;
+    left: 10px;
+    background-color: var(--bgc);
+    padding: 0.3rem;
+  }
+
+  input {
+    padding: 1rem 1.5rem;
+    border: 1px solid gainsboro;
+    outline: gray;
+    background-color: var(--bgc);
+    border-radius: $smallBorderRadius;
+    min-width: 300px;
+  }
+}
+
+html[dir="rtl"] {
+  .form__control {
+    label {
+      left: auto;
+      right: 10px;
+    }
+  }
+}
