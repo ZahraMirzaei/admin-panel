@@ -1,0 +1,86 @@
+@use "../../scss/abstracts/" as *;
+
+.container {
+  @include flex();
+  min-height: 100vh;
+  background-color: var(--bgc);
+  .keyPic {
+    width: 800px;
+    min-width: 600px;
+    order: 2;
+    @media screen and (max-width: 992px) {
+      display: none;
+    }
+  }
+}
+
+.loginBox {
+  @include flex();
+  flex-direction: column;
+  width: 400px;
+  padding: 0 2rem 4rem;
+  background-color: #f9f9fa;
+  color: #424750;
+  border-radius: $mediumBorderRadius;
+  box-shadow: $mainBoxShadow;
+
+  .logo {
+    margin-top: -2rem;
+    width: 200px;
+  }
+
+  .title {
+    font-size: $fontSizeHeadlineMedium;
+    line-height: 50px;
+    letter-spacing: 0;
+    font-weight: 400;
+    margin: -2rem 0 4rem;
+  }
+
+  & input,
+  & label,
+  & a {
+    background-color: #f9f9fa !important;
+    color: #424750;
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .forgat_pass {
+    margin: 1rem 0;
+    display: inline-block;
+    color: gray;
+    font-size: 14px;
+  }
+
+  .checkbox {
+    @include flex(center, flex-start);
+
+    input {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      padding: 6px;
+      border-radius: 8px;
+    }
+
+    label {
+      margin: 0 0.5rem;
+    }
+  }
+}
+
+.rtl {
+  font-family: iranyekan, "IRANSans", "Tahoma";
+  direction: rtl;
+  text-align: right;
+
+  label {
+    left: auto;
+    right: 10px;
+  }
+}
