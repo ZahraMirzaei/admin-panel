@@ -13,20 +13,20 @@
   top: 0;
   transition: all 0.3s ease-in-out;
   z-index: 200;
-  overflow: hidden;
+  overflow: auto;
 
   &.sidebar_close {
     width: 50px;
+    @include tablet {
+      width: 100%;
+    }
   }
 
   @include tablet {
     width: 100vw;
     z-index: 1;
     background-color: var(--secondaryColor);
-    color: #ebebeb;
-    user-select: none;
-    // opacity: 0;
-    // visibility: hidden;
+    color: #ebebeb !important;
   }
 
   &__logo {
@@ -39,6 +39,13 @@
       --size: 7.5rem;
       width: var(--size);
       height: var(--size);
+    }
+
+    @include tablet {
+      padding-top: 5rem;
+    }
+    @include mobile {
+      padding-top: 0.5rem;
     }
   }
 
@@ -127,6 +134,10 @@ html[dir="rtl"] {
       width: 46px;
       margin-right: 10px;
       overflow: hidden;
+      @include tablet {
+        direction: rtl;
+        width: auto;
+      }
     }
   }
 }

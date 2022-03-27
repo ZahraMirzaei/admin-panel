@@ -8,6 +8,7 @@
   padding: 1rem 2rem;
   flex: 1;
   overflow: auto;
+  max-width: 2000px;
 
   &::-webkit-scrollbar {
     height: 0.8rem;

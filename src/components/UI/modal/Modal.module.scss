@@ -68,8 +68,9 @@
     z-index: 1000;
   }
   .modal {
-    left: calc(50% - 15rem);
-    width: 30rem;
+    left: calc(50% - 11.5rem);
+    width: 23rem;
+    min-width: auto;
     z-index: 1000;
   }
 }
