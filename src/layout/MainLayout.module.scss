@@ -12,23 +12,26 @@
   &__content {
     min-height: 100vh;
     padding: 1rem 2.5rem 1rem 17rem;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    @include tablet {
+      padding: 1rem;
+    }
     &.close_sidebar {
       padding: 1rem 2.5rem 1rem 6rem;
       @include tablet {
-        padding: 1rem 2rem 1rem 2rem;
+        padding: 1rem;
       }
     }
 
     @include tablet {
-      padding: 0.8rem 2rem;
+      // padding: 0.8rem 2rem;
       position: relative;
       background-color: var(--card-bgc);
       z-index: 100;
     }
 
     @include mobile {
-      padding: 0.8rem 1rem;
+      padding: 1rem;
     }
   }
 }

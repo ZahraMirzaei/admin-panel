@@ -3,7 +3,7 @@
 .topNav {
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
   border-bottom: 3px solid gainsboro;
   margin-bottom: 4rem;
   &_left {
@@ -13,6 +13,15 @@
 
     &_menu_icon {
       cursor: pointer;
+      @include tablet {
+        display: none;
+      }
+    }
+    &_menu {
+      display: none;
+      @include tablet {
+        display: block;
+      }
     }
   }
 
