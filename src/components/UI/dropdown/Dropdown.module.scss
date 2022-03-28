@@ -10,3 +10,10 @@
   border-right: 1rem solid transparent;
   cursor: pointer;
 }
+
+html[dir="rtl"] {
+  .select {
+    border-right: none;
+    border-left: 1rem solid transparent;
+  }
+}
