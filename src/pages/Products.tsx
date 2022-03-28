@@ -6,6 +6,7 @@ import { IProductsTable } from "../interfaces/Itable";
 import { products, productsHeader } from "../constants/tables";
 import LoadingSpinner from "../components/UI/loadingSpinner/LoadingSpinner";
 import Dropdown from "../components/UI/dropdown/Dropdown";
+
 const url =
   "https://admin-panel-79c71-default-rtdb.europe-west1.firebasedatabase.app/products.json";
 
@@ -20,79 +21,62 @@ function Products() {
   const [selected, setSelected] = useState(dropdownOptions[0].value);
   const { data, error, status } = useFetch<IProductsTable[]>(url);
   let productsTable;
-  let tableData: IProductsTable[] = products.filter(
-    (item) => item.category === selected
-  );
-  useEffect(() => {
-    if (data) {
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      tableData = data.filter((item) => item.category === selected);
-    } else if (error) {
-      tableData = products.filter((item) => item.category === selected);
-    }
-  }, [selected, data]);
+  let tableData: IProductsTable[] | undefined;
 
   function selectedChangeHandler(e: React.ChangeEvent<HTMLSelectElement>) {
     setSelected(() => e.target.value);
-    // console.log(selected, e.target.value);
   }
 
   if (status === "loading") {
     productsTable = <LoadingSpinner />;
   }
 
-  if (error && selected === "all") {
-    productsTable = (
-      <CustomTable headData={productsHeader} bodyData={products} limit={10} />
-    );
-  } else if (error && selected !== "digital") {
-    tableData = products.filter((item) => item.category === selected);
-    productsTable = (
-      <CustomTable headData={productsHeader} bodyData={tableData} limit={10} />
-    );
-  }
-
-  if (status === "fetched" && data && selected === "all") {
-    productsTable = (
-      <CustomTable headData={productsHeader} bodyData={data} limit={10} />
-    );
-  } else if (status === "fetched" && data && selected !== "all") {
-    // tableData = data.filter((item) => item.category === "digital");
-    console.log(selected, tableData);
+  if (error) {
+    //if fetch has error:
+    //select data from local file ("../constants/tables.ts")
+    switch (selected) {
+      case "digital":
+        tableData = products?.filter((item) => item.category === selected);
+        break;
+      case "clothing":
+        tableData = products?.filter((item) => item.category === selected);
+        break;
+      case "beauty":
+        tableData = products?.filter((item) => item.category === selected);
+        break;
+      default:
+        tableData = products;
+    }
 
     productsTable = (
       <CustomTable headData={productsHeader} bodyData={tableData} limit={10} />
     );
   }
 
-  // if (selected === "all") {
-  //   productsTable = error ? (
-  //     <CustomTable limit={10} headData={productsHeader} bodyData={products} />
-  //   ) : status === "fetched" && data ? (
-  //     <CustomTable limit={10} headData={productsHeader} bodyData={data} />
-  //   ) : null;
-  // }
+  if (status === "fetched" && data) {
+    switch (selected) {
+      case "digital":
+        tableData = data?.filter((item) => item.category === selected);
+        break;
+      case "clothing":
+        tableData = data?.filter((item) => item.category === selected);
+        break;
+      case "beauty":
+        tableData = data?.filter((item) => item.category === selected);
+        break;
+      default:
+        tableData = data;
+    }
 
-  // if (selected !== "all") {
-  //   tableData = error
-  //     ? products.filter((item) => item.category === selected)
-  //     : data?.filter((item) => item.category === selected);
-  //   console.log(tableData);
-  //   productsTable = (
-  //     <CustomTable limit={10} headData={productsHeader} bodyData={tableData!} />
-  //   );
-  // }
-
-  // if (selected === "all" && data) {
-  //   productsTable = (
-  //     <CustomTable limit={10} headData={productsHeader} bodyData={data} />
-  //   );
-  // } else {
-  //   tableData = data?.filter((item) => item.category === selected);
-  //   productsTable = (
-  //     <CustomTable limit={10} headData={productsHeader} bodyData={tableData!} />
-  //   );
-  // }
+    productsTable = (
+      <CustomTable
+        selectedCategory={selected}
+        headData={productsHeader}
+        bodyData={tableData}
+        limit={10}
+      />
+    );
+  }
 
   return (
     <section>
