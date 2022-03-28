@@ -96,12 +96,22 @@ const CustomTable: React.FC<Itable> = (props) => {
     }
   }
 
-  const initDataShow =
-    props.limit && props.bodyData
+  const initDataShow = () => {
+    return props.limit && props.bodyData
       ? props.bodyData.slice(0, Number(props.limit))
       : props.bodyData;
+  };
 
   const [dataShow, setDataShow] = useState(initDataShow);
+  // const [selectedCategory, setSelectedCategory] = useState(
+  //   props.selectedCategory
+  // );
+
+  // if (props.selectedCategory) {
+  //   if (selectedCategory !== props.selectedCategory)
+  //     setDataShow(props.bodyData);
+  // }
+  // setSelectedCategory(props.selectedCategory);
 
   let pages = 1;
 
