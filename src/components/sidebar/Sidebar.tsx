@@ -28,7 +28,6 @@ function Sidebar() {
     loginCtx.toggleLogin();
   }
 
-  console.log(sidebarCtx.isOpen);
   useEffect(() => {
     const curPath = window.location.pathname.split("/")[1];
     const activeItem = sidebarNav.findIndex((item) => item.section === curPath);

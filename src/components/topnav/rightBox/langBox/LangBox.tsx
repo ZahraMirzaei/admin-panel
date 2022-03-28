@@ -30,7 +30,6 @@ function LangBox() {
     if (showLangBox && langBoxRef.current) {
       setShowLangBox(false);
     }
-    console.log("show or hide");
   }, [showLangBox]);
 
   //custom hook - when click outside of langbox, it will close.
