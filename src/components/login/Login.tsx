@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import LoginContext from "../../store/loginContext";
 import langContextObj from "../../store/langContext";
 import { images } from "../../constants";
@@ -11,11 +11,28 @@ import { Link } from "react-router-dom";
 function LoginBox() {
   const loginCtx = useContext(LoginContext);
   const langCtx = useContext(langContextObj);
+  const userNameRef = useRef<HTMLInputElement>(null);
+  const errorMessageRef = useRef<HTMLSpanElement>(null);
   const { t } = useTranslation();
 
-  function loginHandler() {
-    loginCtx.toggleLogin();
+  let isValid = true;
+  function loginHandler(e: React.FormEvent) {
+    e.preventDefault();
+    isValid = userNameRef.current?.value === "admin";
+    if (userNameRef.current) {
+      console.log(userNameRef.current);
+      if (isValid) {
+        loginCtx.toggleLogin();
+      } else {
+        userNameRef.current.focus();
+        errorMessageRef.current?.setAttribute(
+          "style",
+          "display: inline-block;opacity: 1"
+        );
+      }
+    }
   }
+
   return (
     <div
       className={`${classes.container} ${
@@ -27,10 +44,23 @@ function LoginBox() {
           <img src={images.logo} alt="digikala" />
         </div>
         <h2 className={classes.title}>{t("loginPage")}</h2>
-        <form>
-          <Input type={"text"} id={"userName"} value={"admin"} />
-          <Input type={"password"} id={"pass"} value={"admin"} />
-          <Button onClick={loginHandler}>{t("login")}</Button>
+        <form onSubmit={loginHandler}>
+          <Input
+            ref={userNameRef}
+            type={"text"}
+            id={"userName"}
+            placeholder={"admin"}
+          />
+          <span ref={errorMessageRef} className={classes.errorMessage}>
+            {t("errorMessage")}
+          </span>
+          <Input
+            type={"password"}
+            id={"pass"}
+            value={"admin"}
+            readonly={true}
+          />
+          <Button type="submit">{t("login")}</Button>
           <Link className={classes.forgat_pass} to="/">
             {t("forgetPass")}
           </Link>
