@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useImperativeHandle, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import classes from "./Input.module.scss";
 
@@ -10,22 +10,51 @@ interface Props {
   placeholder?: string;
   classes?: string;
   value?: string;
+  ref?: HTMLInputElement;
+  readonly?: boolean;
 }
-const Input: React.FC<Props> = (props) => {
+
+interface IImperativeHandler {
+  focus: () => void;
+  value?: string;
+}
+const Input = React.forwardRef<IImperativeHandler, Props>((props, ref) => {
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  const [value, setValue] = useState(props.value || "");
+
+  function inputChangeHandler(e: React.FormEvent<HTMLInputElement>) {
+    setValue(e.currentTarget.value);
+  }
+
+  function inputFocused() {
+    inputRef.current?.focus();
+    inputRef.current?.setAttribute("style", "border:2px solid red");
+    console.log(inputRef.current?.value);
+  }
+
+  useImperativeHandle(ref, () => {
+    return {
+      focus: inputFocused,
+      value: value,
+    };
+  });
   const { t } = useTranslation();
   return (
     <div className={`${classes.form__control} ${props.classes}`}>
       <label htmlFor={props.id}>{t(`${props.id}`)}</label>
       <input
+        ref={inputRef}
         id={props.id}
         minLength={props.minLength}
         maxLength={props.maxLength}
         type={props.type}
         placeholder={props.placeholder}
-        value={props.value}
+        value={value}
+        readOnly={props.readonly || false}
+        onChange={inputChangeHandler}
       />
     </div>
   );
-};
+});
 
 export default Input;
