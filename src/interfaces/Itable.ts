@@ -38,10 +38,12 @@ export type complex =
 
 export interface Itable {
   limit?: number;
+  selectedCategory?: string;
   headData: string[];
-  bodyData:
-    | ItopCustomers[]
-    | TlatestTransactions[]
-    | IcustomersTable[]
-    | IProductsTable[];
+  bodyData: (
+    | ItopCustomers
+    | TlatestTransactions
+    | IcustomersTable
+    | IProductsTable
+  )[];
 }
