@@ -87,6 +87,8 @@ i18n
           Oct: "Oct",
           Nov: "Nov",
           Dec: "Dec",
+          backToHome: "Back to Main Page",
+          notFoundMsg: "Page Not Found!",
         },
       },
       fa: {
@@ -168,6 +170,8 @@ i18n
           Oct: "مهر",
           Nov: "آبان",
           Dec: "آذر",
+          backToHome: "برگشت به صفحه اصلی",
+          notFoundMsg: "صفحه مورد نظر یافت نشد!",
         },
       },
     },
