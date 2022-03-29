@@ -1,7 +1,5 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { t } from "i18next";
-import React from "react";
 import Button from "../components/UI/button/Button";
 import { useTranslation } from "react-i18next";
 import langContextObj from "../store/langContext";
