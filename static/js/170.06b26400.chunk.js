@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkadmin_panel=self.webpackChunkadmin_panel||[]).push([[170],{6170:function(n,e,a){a.r(e);a(2791);var u=a(184);e.default=function(){return(0,u.jsx)("div",{children:"BlankPage"})}}}]);
+//# sourceMappingURL=170.06b26400.chunk.js.map
