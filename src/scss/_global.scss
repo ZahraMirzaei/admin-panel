@@ -147,6 +147,7 @@ body {
 }
 
 .rtl {
+  font-family: iranyekan, "IRANSans", "Tahoma";
   direction: rtl;
   text-align: right;
 }
@@ -159,6 +160,7 @@ body {
   .topNav_left_menu_open {
     display: block;
   }
+
   .topNav_left_menu_close {
     display: none;
   }
@@ -174,18 +176,73 @@ body {
     transition: all 0.5s ease-in-out;
     box-shadow: $secondBoxShadow;
   }
+
   .sidebar__open .topNav_left_menu_open {
     display: none;
   }
+
   .sidebar__open .topNav_left_menu_close {
     display: block;
   }
+}
+
+#overlay-root > div {
+  padding: 0;
 }
 
 .main_wrapper {
   transform: scale(1) translateX(0);
   // transition: all 0.5s ease-in-out;
 }
+
+//----------- not found Page -----------------
+.notFound__container {
+  font-family: var(--fontFamily);
+  @include flex();
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  @include tablet {
+    background-color: var(--bgc);
+  }
+}
+
+.notFound__container_rtl {
+  font-family: iranyekan, "IRANSans", "Tahoma";
+  min-height: 100vh;
+  @include flex();
+  flex-direction: column;
+  @include tablet {
+    background-color: var(--bgc);
+  }
+}
+
+.notFound__title {
+  font-size: 63px;
+  margin: 5rem 0 3rem;
+  font-family: inherit;
+  line-height: 70px;
+  &_rtl {
+    direction: rtl;
+  }
+
+  @include tablet {
+    font-size: 36px;
+    margin: 3rem;
+    line-height: 33px;
+  }
+  @include mobile {
+    font-size: 24px;
+    margin: 1rem;
+  }
+}
+
+.notFound__img {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+//---------- end of not Found page
 
 html[dir="rtl"] {
   @include tablet {
@@ -196,6 +253,8 @@ html[dir="rtl"] {
     }
   }
 }
+
+//---------- scrollbar styles
 
 ::-webkit-scrollbar {
   width: 0.5rem;
@@ -208,8 +267,4 @@ html[dir="rtl"] {
 ::-webkit-scrollbar-thumb {
   background-color: var(--secondaryColor);
   border-radius: 100vw;
-}
-
-#overlay-root > div {
-  padding: 0;
 }
