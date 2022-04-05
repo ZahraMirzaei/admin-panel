@@ -186,6 +186,12 @@ body {
   }
 }
 
+@include mobile {
+  .sidebar__open .main_wrapper {
+    transform: scale(0.9) translateX(60%);
+  }
+}
+
 #overlay-root > div {
   padding: 0;
 }
