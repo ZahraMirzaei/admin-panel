@@ -1,5 +1,9 @@
 @use "../../scss/abstracts/" as *;
 
+html {
+  background-color: var(--bgc);
+}
+
 .container {
   @include flex();
   min-height: 100vh;
