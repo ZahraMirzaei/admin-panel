@@ -18,6 +18,9 @@
     background-color: var(--bgc);
     border-radius: $smallBorderRadius;
     min-width: 300px;
+    @media screen and (max-width: 300px) {
+      min-width: auto;
+    }
   }
 }
 
