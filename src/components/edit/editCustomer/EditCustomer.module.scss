@@ -39,6 +39,10 @@
     }
   }
 
+  &__contact__phone div {
+    direction: ltr;
+  }
+
   &__contact__email svg {
     margin: 0 0.2rem;
   }
