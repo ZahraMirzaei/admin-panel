@@ -1,3 +1,5 @@
+@use "../../scss/abstracts/" as *;
+
 .chart {
   margin-bottom: 2rem;
   &__wrapper {
@@ -5,5 +7,95 @@
     overflow: auto;
     width: 100%;
     min-width: 500px;
+  }
+}
+
+.charts__container {
+  @include flex(stretch, center);
+  flex-wrap: wrap;
+
+  & > div:nth-child(2) {
+    flex: 4 1 800px;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 0;
+
+    @media screen and (max-width: 1610px) {
+      margin-left: 0;
+    }
+  }
+}
+
+.charts__wrapper {
+  @include flex();
+  flex-direction: column;
+  min-width: 400px;
+  flex: 3 1 500px;
+
+  @media screen and (max-width: 1625px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+
+    & div:first-child {
+      margin-right: 1rem;
+      @media screen and (max-width: 920px) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @include mobile {
+    min-width: 250px;
+  }
+  @media screen and (max-width: 310px) {
+    min-width: 150px;
+  }
+
+  & > div {
+    width: 100%;
+    min-width: 400px;
+    margin: 0.5rem 1rem 0.5rem 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @media screen and (max-width: 1625px) {
+      margin: 0.5rem 0 0.5rem 0;
+    }
+
+    @include mobile {
+      min-width: 250px;
+    }
+
+    @media screen and (max-width: 310px) {
+      min-width: 150px;
+    }
+  }
+}
+
+html[dir="rtl"] {
+  .charts__container {
+    & > div:nth-child(2) {
+      margin-left: 0;
+      margin-right: 1rem;
+      @media screen and (max-width: 1610px) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .charts__wrapper {
+    & div:first-child {
+      margin-left: 1rem;
+      @media screen and (max-width: 920px) {
+        margin-left: 0;
+      }
+    }
+    & > div {
+      margin: 0.5rem 0 0.5rem 1rem;
+
+      @media screen and (max-width: 1625px) {
+        margin: 0.5rem 0 0.5rem 0;
+      }
+    }
   }
 }
