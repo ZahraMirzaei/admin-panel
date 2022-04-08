@@ -94,4 +94,9 @@ html[dir="rtl"] {
       right: 10px;
     }
   }
+
+  input[type="tel"] {
+    text-align: right;
+    direction: lrt;
+  }
 }
