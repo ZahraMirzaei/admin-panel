@@ -95,6 +95,12 @@ select:-webkit-autofill:focus {
   color: #b9b9b9;
 }
 
+input[type=file], /* FF, IE7+, chrome (except button) */
+input[type=file]::-webkit-file-upload-button {
+  /* chromes and blink button */
+  cursor: pointer;
+}
+
 //general styles
 body {
   background-color: var(--bgc);
