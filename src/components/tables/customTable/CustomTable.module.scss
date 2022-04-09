@@ -57,6 +57,21 @@ td {
   white-space: nowrap;
 }
 
+.userName,
+.product_name {
+  @include flex(center, flex-start);
+}
+
+.avatar,
+.product_img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
 .actions {
   width: 20px;
   text-align: center;
@@ -137,7 +152,7 @@ td {
 
 html[dir="rtl"] {
   th {
-    text-align: center;
+    text-align: right;
     &:first-child {
       border-top-right-radius: $largeBorderRadius;
       border-top-left-radius: 0;
