@@ -15,6 +15,7 @@ export type TlatestTransactions = {
 export interface IcustomersTable {
   ID: number | string;
   userName: string;
+  avatar: string;
   email: string;
   phoneNumber: string;
   totalOrders: number;
@@ -24,6 +25,7 @@ export interface IcustomersTable {
 
 export interface IProductsTable {
   ID: number | string;
+  pic: string;
   product: string;
   inventory: number;
   price: string;
