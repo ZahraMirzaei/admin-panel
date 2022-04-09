@@ -42,7 +42,14 @@ const CustomTable: React.FC<Itable> = (props) => {
       return (
         <tr key={index}>
           <td>{item.ID}</td>
-          <td>{item.userName}</td>
+          <td className={classes.userName}>
+            <img
+              className={classes.avatar}
+              src={item.avatar}
+              alt="user avatar"
+            />
+            {item.userName}
+          </td>
           <td className="ltr">{item.email}</td>
           <td className="ltr">{item.phoneNumber}</td>
           <td>{item.totalOrders}</td>
@@ -67,11 +74,18 @@ const CustomTable: React.FC<Itable> = (props) => {
         </tr>
       );
     } else if ("category" in item) {
-      //for implementing customers table
+      //for implementing products table
       return (
         <tr key={index}>
           <td>{item.ID}</td>
-          <td>{item.product}</td>
+          <td className={classes.product_name}>
+            <img
+              className={classes.product_img}
+              src={item.pic}
+              alt="user avatar"
+            />
+            {item.product}
+          </td>
           <td>{item.inventory}</td>
           <td>{item.price}</td>
           <td>{item.category}</td>
