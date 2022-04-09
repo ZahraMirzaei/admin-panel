@@ -12,7 +12,7 @@ function Profile() {
       </div>
       <div className={classes.profile__info}>
         <p className={classes.profile__userName}>{t("zahraMirzaei")}</p>
-        <span className={classes.profile__role}>{t("admin")}</span>
+        {/* <span className={classes.profile__role}>{t("admin")}</span> */}
       </div>
     </div>
   );
