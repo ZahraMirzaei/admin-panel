@@ -14,6 +14,13 @@ const EditCustomer: React.FC<{ customer?: IcustomersTable }> = (props) => {
       <div className={classes.edit__left}>
         <Card>
           <div className={classes.account}>
+            <div className={classes.img_wrapper}>
+              <img
+                className={classes.avatar}
+                src={props.customer?.avatar}
+                alt="customer avatar"
+              />
+            </div>
             <div className={classes.account__info}>
               <p>{t("AccountDetails")}</p>
               <div className={classes.account__info__userName}>
@@ -47,6 +54,25 @@ const EditCustomer: React.FC<{ customer?: IcustomersTable }> = (props) => {
               <Icon icon="fluent:edit-16-regular" width="24" />
               {t("edit")}
             </h3>
+            <div className={classes.img_wrapper}>
+              <div className={classes.upload_icon}>
+                <Icon icon="akar-icons:cloud-upload" />
+              </div>
+              <div className={classes.file_input_control}>
+                <input
+                  className={classes.file_input}
+                  type="file"
+                  id="avatar"
+                  name="avatar"
+                  accept="image/png, image/jpeg"
+                />
+              </div>
+              <img
+                className={classes.avatar}
+                src={props.customer?.avatar}
+                alt="customer avatar"
+              />
+            </div>
             <form
               onSubmit={(e) => {
                 e.preventDefault();
