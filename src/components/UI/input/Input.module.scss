@@ -18,6 +18,7 @@
     background-color: var(--bgc);
     border-radius: $smallBorderRadius;
     min-width: 300px;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.05);
     @media screen and (max-width: 300px) {
       min-width: auto;
     }
