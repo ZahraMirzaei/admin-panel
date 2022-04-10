@@ -51,7 +51,8 @@
     }
   }
 
-  .img_wrapper:hover .upload_icon {
+  .img_wrapper:hover .upload_icon,
+  .img_wrapper:active .upload_icon {
     opacity: 1;
   }
 
@@ -84,8 +85,6 @@
 
 .avatar {
   object-fit: cover;
-  // display: inline-block;
-  margin: 0 0.5rem;
 }
 
 .account {
@@ -130,48 +129,9 @@
       margin-bottom: 14rem;
     }
   }
-
-  .form__control {
-    position: relative;
-    margin-bottom: 2rem;
-    // border: 1px solid red;
-    label {
-      position: absolute;
-      top: -30%;
-      left: 10px;
-      background-color: var(--bgc);
-      padding: 0.3rem;
-    }
-
-    input {
-      padding: 1rem 1.5rem;
-      border: 1px solid gainsboro;
-      outline: gray;
-      background-color: var(--bgc);
-      border-radius: $smallBorderRadius;
-      min-width: 300px;
-    }
-
-    .btn {
-      padding: 0.8rem 3rem;
-      border: none;
-      border-radius: $smallBorderRadius;
-      background-color: var(--secondaryColor);
-      color: gainsboro;
-      font-size: 16px;
-      font-weight: 700;
-    }
-  }
 }
 
 html[dir="rtl"] {
-  .form__control {
-    label {
-      left: auto;
-      right: 10px;
-    }
-  }
-
   input[type="tel"] {
     text-align: right;
     direction: ltr;

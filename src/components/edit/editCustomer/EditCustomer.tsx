@@ -6,6 +6,7 @@ import classes from "./EditCustomer.module.scss";
 import { IcustomersTable } from "../../../interfaces/Itable";
 import { Icon } from "@iconify/react";
 import Button from "../../UI/button/Button";
+import Input from "../../UI/input/Input";
 
 const EditCustomer: React.FC<{ customer?: IcustomersTable }> = (props) => {
   const { t } = useTranslation();
@@ -78,44 +79,35 @@ const EditCustomer: React.FC<{ customer?: IcustomersTable }> = (props) => {
                 e.preventDefault();
               }}
             >
-              <div className={classes.form__control}>
-                <label htmlFor="userName">{t("userName")}</label>
-                <input
-                  id="userName"
-                  type="text"
-                  placeholder={props.customer?.userName}
-                />
-              </div>
-              <div className={classes.form__control}>
-                <label htmlFor="phoneNumber">{t("phoneNumber")}</label>
-                <input
-                  id="phoneNumber"
-                  minLength={7}
-                  maxLength={12}
-                  type="tel"
-                  placeholder={props.customer?.phoneNumber}
-                />
-              </div>
-              <div className={classes.form__control}>
-                <label htmlFor="email">{t("email")}</label>
-                <input
-                  id="email"
-                  type="email"
-                  placeholder={props.customer?.email}
-                />
-              </div>
-              <div className={classes.form__control}>
-                <label htmlFor="address">{t("address")}</label>
-                <input
-                  id="address"
-                  minLength={10}
-                  type="text"
-                  placeholder={props.customer?.location}
-                />
-              </div>
+              <Input
+                id="userName"
+                type="text"
+                placeholder={props.customer?.userName}
+              />
+              <Input
+                id="phoneNumber"
+                type="tel"
+                minLength={7}
+                maxLength={12}
+                placeholder={props.customer?.phoneNumber}
+              />
+              <Input
+                id="email"
+                type="email"
+                placeholder={props.customer?.email}
+              />
+              <Input
+                id="address"
+                type="text"
+                minLength={10}
+                placeholder={props.customer?.location}
+              />
               <div className={classes.form__control}>
                 <Link to="/customers">
                   <Button type="submit">{t("upload")}</Button>
+                </Link>
+                <Link to="/customers">
+                  <Button outline={true}>{t("cancel")}</Button>
                 </Link>
               </div>
             </form>
