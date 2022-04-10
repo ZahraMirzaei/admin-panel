@@ -43,7 +43,7 @@ function App() {
               <Route path="/inventory" element={<BlankPage />} />
             </Route>
           )}
-          <Route path="*" element={<NotFound />} />
+          {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
       </Suspense>
     </BrowserRouter>
