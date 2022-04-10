@@ -6,6 +6,7 @@ import { IProductsTable } from "../../../interfaces/Itable";
 import classes from "./EditProduct.module.scss";
 import { Icon } from "@iconify/react";
 import Button from "../../UI/button/Button";
+import Input from "../../UI/input/Input";
 const EditProduct: React.FC<{ product?: IProductsTable }> = (props) => {
   const { t } = useTranslation();
   return (
@@ -53,38 +54,26 @@ const EditProduct: React.FC<{ product?: IProductsTable }> = (props) => {
                 e.preventDefault();
               }}
             >
-              <div className={classes.form__control}>
-                <label htmlFor="proName">{t("proName")}</label>
-                <input
-                  id="proName"
-                  type="text"
-                  placeholder={props.product?.product}
-                />
-              </div>
-              <div className={classes.form__control}>
-                <label htmlFor="category">{t("category")}</label>
-                <input
-                  id="category"
-                  type="text"
-                  placeholder={props.product?.category}
-                />
-              </div>
-              <div className={classes.form__control}>
-                <label htmlFor="price">{t("price")}</label>
-                <input
-                  id="price"
-                  type="text"
-                  placeholder={props.product?.price}
-                />
-              </div>
-              <div className={classes.form__control}>
-                <label htmlFor="inventoryCount">{t("inventoryCount")}</label>
-                <input
-                  id="inventoryCount"
-                  type="number"
-                  placeholder={props.product?.inventory.toString()}
-                />
-              </div>
+              <Input
+                id="proName"
+                type="text"
+                placeholder={props.product?.product}
+              />
+              <Input
+                id="category"
+                type="text"
+                placeholder={props.product?.category}
+              />
+              <Input
+                id="price"
+                type="text"
+                placeholder={props.product?.price}
+              />
+              <Input
+                id="inventoryCount"
+                type="number"
+                placeholder={props.product?.inventory.toString()}
+              />
               <div className={classes.form__control}>
                 <Link to="/products">
                   <Button type="submit">{t("upload")}</Button>
