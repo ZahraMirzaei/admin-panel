@@ -13,6 +13,13 @@ const EditProduct: React.FC<{ product?: IProductsTable }> = (props) => {
     <div className={classes.edit__container}>
       <div className={classes.edit__left}>
         <Card>
+          <div className={classes.img_wrapper}>
+            <img
+              className={classes.pic}
+              src={props.product?.pic}
+              alt="product pic"
+            />
+          </div>
           <div className={classes.product__info}>
             <div>
               <div className={classes.title}>{t("proName")}</div>
@@ -44,11 +51,30 @@ const EditProduct: React.FC<{ product?: IProductsTable }> = (props) => {
 
       <div className={classes.edit__right}>
         <Card>
-          <div className={classes.product__info}>
+          <div className={classes.product__edit}>
             <h3 className={classes.subTitle}>
               <Icon icon="fluent:edit-16-regular" width="24" />
               {t("edit")}
             </h3>
+            <div className={classes.img_wrapper}>
+              <div className={classes.upload_icon}>
+                <Icon icon="akar-icons:cloud-upload" />
+              </div>
+              <div className={classes.file_input_control}>
+                <input
+                  className={classes.file_input}
+                  type="file"
+                  id="pic"
+                  name="pic"
+                  accept="image/png, image/jpeg"
+                />
+              </div>
+              <img
+                className={classes.pic}
+                src={props.product?.pic}
+                alt="product pic"
+              />
+            </div>
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -74,7 +100,7 @@ const EditProduct: React.FC<{ product?: IProductsTable }> = (props) => {
                 type="number"
                 placeholder={props.product?.inventory.toString()}
               />
-              <div className={classes.form__control}>
+              <div className={classes.btn__wrapper}>
                 <Link to="/products">
                   <Button type="submit">{t("upload")}</Button>
                 </Link>
