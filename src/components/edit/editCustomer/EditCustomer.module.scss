@@ -28,9 +28,9 @@
     right: 1rem;
 
     @media screen and (max-width: 410px) {
-      top: 9rem;
+      top: 6rem;
       right: auto;
-      left: 3rem;
+      left: 0;
     }
   }
 
@@ -46,6 +46,9 @@
     background-color: rgba(0, 0, 0, 0.4);
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
+    @include mobile {
+      opacity: 1;
+    }
     svg {
       cursor: pointer;
     }
@@ -95,6 +98,10 @@
   @media screen and (max-width: 1250px) {
     margin: 3rem 0.5rem;
   }
+
+  @media screen and (max-width: 410px) {
+    position: relative;
+  }
   &__info {
     color: lightslategray;
     margin-bottom: 2rem;
@@ -131,6 +138,23 @@
   }
 }
 
+.btn__wrapper {
+  @include flex(center, space-between);
+  flex-wrap: wrap;
+
+  & a {
+    flex: 1;
+    margin: 0.5rem 0;
+  }
+  & button {
+    width: 90%;
+
+    @include tablet {
+      margin: 0;
+    }
+  }
+}
+
 html[dir="rtl"] {
   input[type="tel"] {
     text-align: right;
@@ -143,7 +167,7 @@ html[dir="rtl"] {
       left: 1rem;
 
       @media screen and (max-width: 410px) {
-        right: 3rem;
+        right: 0;
         left: auto;
       }
     }
