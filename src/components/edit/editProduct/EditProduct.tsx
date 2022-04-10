@@ -89,6 +89,9 @@ const EditProduct: React.FC<{ product?: IProductsTable }> = (props) => {
                 <Link to="/products">
                   <Button type="submit">{t("upload")}</Button>
                 </Link>
+                <Link to="/products">
+                  <Button outline={true}>{t("cancel")}</Button>
+                </Link>
               </div>
             </form>
           </div>
