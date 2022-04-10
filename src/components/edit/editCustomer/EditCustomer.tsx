@@ -102,7 +102,7 @@ const EditCustomer: React.FC<{ customer?: IcustomersTable }> = (props) => {
                 minLength={10}
                 placeholder={props.customer?.location}
               />
-              <div className={classes.form__control}>
+              <div className={classes.btn__wrapper}>
                 <Link to="/customers">
                   <Button type="submit">{t("upload")}</Button>
                 </Link>
