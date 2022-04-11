@@ -1,4 +1,5 @@
 import React, { useContext, useRef } from "react";
+
 import LoginContext from "../../store/loginContext";
 import langContextObj from "../../store/langContext";
 import { images } from "../../constants";
@@ -6,13 +7,14 @@ import Input from "../UI/input/Input";
 import Button from "../UI/button/Button";
 import { useTranslation } from "react-i18next";
 import classes from "./Login.module.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function LoginBox() {
   const loginCtx = useContext(LoginContext);
   const langCtx = useContext(langContextObj);
   const userNameRef = useRef<HTMLInputElement>(null);
   const errorMessageRef = useRef<HTMLSpanElement>(null);
+  const navigate = useNavigate();
   const { t } = useTranslation();
 
   let isValid = true;
@@ -20,9 +22,10 @@ function LoginBox() {
     e.preventDefault();
     isValid = userNameRef.current?.value === "admin";
     if (userNameRef.current) {
-      console.log(userNameRef.current);
+      console.log(userNameRef.current, isValid);
       if (isValid) {
         loginCtx.toggleLogin();
+        navigate("/");
       } else {
         userNameRef.current.focus();
         errorMessageRef.current?.setAttribute(
