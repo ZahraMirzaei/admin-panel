@@ -21,14 +21,15 @@ const ProductEdit = React.lazy(() => import("./pages/ProductEdit"));
 const NotFound = React.lazy(() => import("./pages/NotFound"));
 const BlankPage = React.lazy(() => import("./pages/BlankPage"));
 const Login = React.lazy(() => import("./pages/Login"));
+const ProtectedRoute = React.lazy(() => import("./route/ProtectedRoute"));
 
 function App() {
-  const loginCtx = useContext(LoginContext);
+  // const loginCtx = useContext(LoginContext);
   return (
     <BrowserRouter>
       <Suspense fallback={<LoadingSpinner />}>
         <Routes>
-          {!loginCtx.isLogin ? (
+          {/* {!loginCtx.isLogin ? (
             <Route path="/" element={<Login />} />
           ) : (
             <Route path="/" element={<MainLayout />}>
@@ -42,7 +43,21 @@ function App() {
               <Route path="/discount" element={<BlankPage />} />
               <Route path="/inventory" element={<BlankPage />} />
             </Route>
-          )}
+          )} */}
+          <Route path="/" element={<Login />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path="/" element={<MainLayout />}>
+              <Route index element={<Dashboard />} />
+              <Route path="/customers" element={<Customers />} />
+              <Route path="/customers/:customerId" element={<CustomerEdit />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/products/:productId" element={<ProductEdit />} />
+              <Route path="/orders" element={<BlankPage />} />
+              <Route path="/analytics" element={<BlankPage />} />
+              <Route path="/discount" element={<BlankPage />} />
+              <Route path="/inventory" element={<BlankPage />} />
+            </Route>
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
