@@ -31,14 +31,8 @@ Visit: [Project React Admin Panel demo](https://admin-panel-portfolio.netlify.ap
 * Edit Customers
 * 404 Error(not found)
 
-# Would you mind support me?
 
-* Star GitHub repo
-* Create pull requests, submit bugs, suggest new features or documentation updates.
-
-
-
-## Getting Started
+# Getting Started
 
 **1. Clone from Github**
 
@@ -59,3 +53,11 @@ Open http://localhost:3000 to view it in the browser. Whenever you modify any of
 Builds the app for production to the build folder. It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes. Your app is ready to be deployed!
+
+
+# Would you mind support me?
+
+* Star GitHub repo
+* Create pull requests, submit bugs, suggest new features or documentation updates.
+
+
