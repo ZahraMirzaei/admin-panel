@@ -64,6 +64,7 @@
 
     @include mobile {
       min-width: 250px;
+      margin: 0.5rem 0.7rem !important;
     }
 
     @media screen and (max-width: 310px) {
@@ -86,7 +87,7 @@ html[dir="rtl"] {
   .charts__wrapper {
     & div:first-child {
       margin-left: 1rem;
-      @media screen and (max-width: 920px) {
+      @media screen and (max-width: 1112px) {
         margin-left: 0;
       }
     }
@@ -95,6 +96,10 @@ html[dir="rtl"] {
 
       @media screen and (max-width: 1625px) {
         margin: 0.5rem 0 0.5rem 0;
+      }
+
+      @include mobile {
+        margin: 0.5rem 0.7rem !important;
       }
     }
   }
