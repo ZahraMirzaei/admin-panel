@@ -11,7 +11,7 @@ import Card from "../UI/card/Card";
 const SaleChart = () => {
   const { t } = useTranslation();
   const labels = data.revenueByMonths.labels.map((month) => t(month));
-  const [userData, setUserData] = useState({
+  const [userData] = useState({
     labels,
     datasets: [
       {
@@ -23,7 +23,7 @@ const SaleChart = () => {
     ],
   });
 
-  const [orderData, setOrderData] = useState({
+  const [orderData] = useState({
     labels,
     datasets: [
       {
@@ -34,7 +34,7 @@ const SaleChart = () => {
     ],
   });
 
-  const [revenueData, setRevenueData] = useState({
+  const [revenueData] = useState({
     labels,
     datasets: [
       {
