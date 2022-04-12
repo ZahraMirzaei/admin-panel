@@ -15,7 +15,10 @@
     margin-top: 2rem;
   }
   @media screen and (max-width: 410px) {
-    min-width: 200px;
+    min-width: 350px;
+  }
+  @media screen and (max-width: 290px) {
+    min-width: 250px;
   }
 }
 
@@ -28,7 +31,7 @@
     right: 1rem;
 
     @media screen and (max-width: 410px) {
-      top: 6rem;
+      top: 5rem;
       right: auto;
       left: 0;
     }
