@@ -7,9 +7,8 @@ import {
   LineElement,
   Tooltip,
   Legend,
-  registerables,
 } from "chart.js";
-import { Chart } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 
 ChartJS.register(
   CategoryScale,
@@ -46,7 +45,7 @@ interface IchartData {
   }[];
 }
 const LineChart: React.FC<{ chartData: IchartData }> = (props) => {
-  return <Chart type="line" data={props.chartData} options={options} />;
+  return <Line data={props.chartData} options={options} />;
 };
 
 export default LineChart;
