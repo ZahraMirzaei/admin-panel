@@ -5,6 +5,8 @@
   flex-wrap: wrap;
   margin: 3rem 0;
   font-size: 14px;
+  margin-left: -2rem;
+  margin-right: -2rem;
 
   &__child {
     padding: 0 1rem;
@@ -33,7 +35,7 @@
 
 .table__title {
   @include flex(center, space-between);
-
+  padding: 0 1rem;
   & a {
     margin-bottom: 1rem;
     color: rgb(0, 132, 255);
