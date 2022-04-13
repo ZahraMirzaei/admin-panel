@@ -63,8 +63,8 @@
     }
 
     @include mobile {
-      min-width: 250px;
-      margin: 0.5rem 0.7rem !important;
+      min-width: 270px;
+      margin: 0.5rem 0 !important;
     }
 
     @media screen and (max-width: 310px) {
@@ -99,7 +99,7 @@ html[dir="rtl"] {
       }
 
       @include mobile {
-        margin: 0.5rem 0.7rem !important;
+        margin: 0.5rem 0 !important;
       }
     }
   }
