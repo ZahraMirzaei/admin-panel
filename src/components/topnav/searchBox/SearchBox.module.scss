@@ -7,6 +7,10 @@
   border-radius: 100vw;
   padding: 0.2rem 0.5rem;
   margin-left: 2rem;
+
+  @media screen and (max-width: 975px) {
+    margin-left: 0;
+  }
   &_input {
     border: none;
     outline: none;

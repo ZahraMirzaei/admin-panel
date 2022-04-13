@@ -31,16 +31,16 @@
 }
 .search_desktop_wrapper {
   flex: 1;
-  @media screen and (max-width: 952px) {
+  @media screen and (max-width: 975px) {
     display: none;
   }
 }
 .search_tablet_wrapper {
   flex: 1 1 500px;
   display: none;
-  @media screen and (max-width: 952px) {
+  @media screen and (max-width: 975px) {
     display: block;
-    margin: 0;
+    margin: 0.5rem 0 0;
   }
 }
 

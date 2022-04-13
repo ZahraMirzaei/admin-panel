@@ -3,8 +3,22 @@
 .topNavBox_right {
   @include flex(center, space-evenly);
   flex: 1;
+  @media screen and (max-width: 975px) {
+    flex: 2;
+  }
+  @media screen and (max-width: 325px) {
+    flex-wrap: wrap;
+  }
 }
 .wrapper {
   flex: 1;
   @include flex(center, flex-end);
+  @media screen and (max-width: 975px) {
+    justify-content: space-evenly;
+  }
+  @media screen and (max-width: 325px) {
+    order: 2;
+    margin-top: 0.5rem;
+    justify-content: space-between;
+  }
 }
