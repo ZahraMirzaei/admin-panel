@@ -35,7 +35,7 @@ export const options = {
   },
 };
 
-interface IchartData {
+interface Props {
   labels: string[];
   datasets: {
     label: string;
@@ -44,7 +44,7 @@ interface IchartData {
     backgroundColor: string;
   }[];
 }
-const LineChart: React.FC<{ chartData: IchartData }> = (props) => {
+const LineChart: React.FC<{ chartData: Props }> = (props) => {
   return <Line data={props.chartData} options={options} />;
 };
 

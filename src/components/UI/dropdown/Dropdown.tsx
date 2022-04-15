@@ -7,11 +7,11 @@ type TOptionItem = {
   value: string;
 };
 
-interface IDropdown {
+interface Props {
   dropdownData: TOptionItem[];
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
-const Dropdown: React.FC<IDropdown> = (props) => {
+const Dropdown: React.FC<Props> = (props) => {
   //   const selectRef = useRef<HTMLSelectElement | null>(null);
 
   const { t } = useTranslation();

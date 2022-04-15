@@ -2,12 +2,12 @@ import React from "react";
 
 import classes from "./Button.module.scss";
 
-interface IButton {
+interface Props {
   type?: "button" | "submit";
   onClick?: (e: React.MouseEvent<HTMLElement>) => void;
   outline?: boolean;
 }
-const Button: React.FC<IButton> = (props) => {
+const Button: React.FC<Props> = (props) => {
   return (
     <button
       className={`${classes.btn} ${

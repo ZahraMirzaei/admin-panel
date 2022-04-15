@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Itable, complex } from "../../../interfaces/Itable";
+import { Itable as Props, complex } from "../../../interfaces/Itable";
 import Card from "../../UI/card/Card";
 import Badge from "../../UI/badge/Badge";
 import Modal from "../../UI/modal/Modal";
@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import { Icon } from "@iconify/react";
 import classes from "./CustomTable.module.scss";
 
-const CustomTable: React.FC<Itable> = (props) => {
+const CustomTable: React.FC<Props> = (props) => {
   const [showModal, setShowModal] = useState(false);
   function showModalHandler() {
     setShowModal((prev) => !prev);

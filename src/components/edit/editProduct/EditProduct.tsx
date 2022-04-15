@@ -2,12 +2,12 @@ import React from "react";
 import Card from "../../UI/card/Card";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { IProductsTable } from "../../../interfaces/Itable";
+import { IProductsTable as Props } from "../../../interfaces/Itable";
 import classes from "./EditProduct.module.scss";
 import { Icon } from "@iconify/react";
 import Button from "../../UI/button/Button";
 import Input from "../../UI/input/Input";
-const EditProduct: React.FC<{ product?: IProductsTable }> = (props) => {
+const EditProduct: React.FC<{ product?: Props }> = (props) => {
   const { t } = useTranslation();
   return (
     <div className={classes.edit__container}>
