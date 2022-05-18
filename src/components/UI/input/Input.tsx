@@ -30,7 +30,6 @@ const Input = React.forwardRef<IImperativeHandler, Props>((props, ref) => {
   function inputFocused() {
     inputRef.current?.focus();
     inputRef.current?.setAttribute("style", "border:2px solid red");
-    console.log(inputRef.current?.value);
   }
 
   useImperativeHandle(ref, () => {
