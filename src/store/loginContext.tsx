@@ -11,8 +11,6 @@ const LoginContext = React.createContext<TContext>({
   toggleLogin: () => {},
 });
 
-// ***** context provider *****
-
 export const LoginContextProvider: React.FC = (props) => {
   const [isLogin, setIsLogin] = useLocalStorage("isLogin", false);
 

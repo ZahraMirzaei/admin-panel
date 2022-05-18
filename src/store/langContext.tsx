@@ -12,7 +12,6 @@ const LangContext = React.createContext<langContextObj>({
   toggleLanguage: (slang) => {},
 });
 
-//--Provider
 export const LangContextProvider: React.FC = (props) => {
   const [lang, setLang] = useLocalStorage("language", "en");
 
