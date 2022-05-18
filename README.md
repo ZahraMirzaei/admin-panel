@@ -42,7 +42,7 @@ Visit: [Project React Admin Panel demo](https://admin-panel-portfolio.netlify.ap
 
 This will install both run-time project dependencies and developer tools listed in package.json file.
 
-**3. Run `npm start` or `yarn install`**
+**3. Run `npm start` or `yarn start`**
 
 Runs the app in the development mode.
 
