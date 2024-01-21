@@ -14,6 +14,8 @@ const ProductEdit = React.lazy(() => import("./pages/ProductEdit"));
 const NotFound = React.lazy(() => import("./pages/NotFound"));
 const BlankPage = React.lazy(() => import("./pages/BlankPage"));
 const Login = React.lazy(() => import("./pages/Login"));
+const OrdersPage = React.lazy(() => import("./pages/OrdersPage"));
+
 
 function App() {
   return (
@@ -27,7 +29,7 @@ function App() {
               <Route path="/customers/:customerId" element={<CustomerEdit />} />
               <Route path="/products" element={<Products />} />
               <Route path="/products/:productId" element={<ProductEdit />} />
-              <Route path="/orders" element={<BlankPage />} />
+              <Route path="/orders" element={<OrdersPage />} />
               <Route path="/analytics" element={<BlankPage />} />
               <Route path="/discount" element={<BlankPage />} />
               <Route path="/inventory" element={<BlankPage />} />
